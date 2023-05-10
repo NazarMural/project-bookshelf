@@ -1,2 +1,12 @@
-@import './common';
-@import './example';
+// CЮДИ НІЧОГО НЕ ІМПОРТУВАТИ. в КОЖНІЙ ПАПЦІ Є СВІЙ _index.html ВСІ ФАЙЛИ ІМПОРТУВАТИ В ТУ ПАПКУ.
+
+// abstracts
+@import './abstracts/index';
+// base
+@import './base/index';
+// components
+@import './components/index';
+// layout
+@import './layout/index';
+// pages
+@import './pages/index';
