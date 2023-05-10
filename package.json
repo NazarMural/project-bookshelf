@@ -1,11 +1,11 @@
 {
-  "name": "start",
+  "name": "project-bookshelf",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://NazarMural.github.io/start",
+  "homepage": "https://NazarMural.github.io/project-bookshelf",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /start/"
+    "build": "parcel build src/*.html --public-url /project-bookshelf/"
   },
   "repository": {
     "type": "git",
