@@ -1,3 +1,5 @@
+import '../sass/components/_login-form.scss';
+import Notiflix from 'notiflix';
 import { initializeApp } from 'firebase/app';
 import {
   getDatabase,
@@ -34,6 +36,12 @@ const auth = getAuth();
 let userId = null;
 let LOGIN = false;
 
+const example = document.querySelector('.js-header-example');
+
+const timer = {
+  timeout: 5000,
+};
+
 if (localStorage.getItem('uid')) {
   userId = localStorage.getItem('uid');
 }
@@ -46,46 +54,28 @@ onAuthStateChanged(auth, user => {
     loginFunc(user.emailVerified);
   } else {
     localStorage.removeItem('uid');
+    localStorage.removeItem('user-name');
     LOGIN = false;
+    loginFunc(null);
     console.log('User signed out');
   }
 });
 
-function createUser(email, password) {
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-      console.log(userCredential);
-
-      sendEmailVerification(auth.currentUser).then(() => {
-        console.log('SENT EMAIL => CHECK');
-      });
-    })
-    .catch(error => {
-      console.log(error);
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
+async function createUser(email, password) {
+  const res = await createUserWithEmailAndPassword(auth, email, password);
+  return res;
 }
 
-function signIn(email, password) {
-  signInWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-      console.log(userCredential);
-      userId = userCredential.user.uid;
-      localStorage.setItem('uid', userId);
-      loginFunc(userCredential.user.emailVerified);
-    })
-    .catch(error => {
-      console.log(error);
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
+async function signIn(email, password) {
+  const res = await signInWithEmailAndPassword(auth, email, password);
+  return res;
 }
 
 function signOutLog() {
   signOut(auth)
     .then(() => {
       localStorage.removeItem('uid');
+      localStorage.removeItem('user-name');
       LOGIN = false;
     })
     .catch(error => {});
@@ -94,19 +84,26 @@ function signOutLog() {
 function loginFunc(verified) {
   if (verified) {
     LOGIN = true;
+
+    example.innerHTML =
+      'ТЫ ЗАШЕЛ КРАСАВЧИК <button type="button" logOut>Log out</button>';
+
+    const logout = document.querySelector('[logOut]');
+    logout.addEventListener('click', signOutLog);
     //ДОБАВИть Функцию которая рендерит Хедер для пользователя регистрационных
   } else {
     LOGIN = false;
     //ДОБАВИть Функцию которая рендерит Хедер НЕ для регистрационных
+    example.innerHTML = '<button type="button" openSignUp>Sign up</button>';
+
+    const openSignUp = document.querySelector('[openSignUp]');
+    openSignUp.addEventListener('click', openSignUpFunc);
   }
 }
 
 function checkLogin() {
   return LOGIN;
 }
-
-// Задать масив
-//set(ref(getDatabase(), 'users/' + userId), items);
 
 //Добавить книгу одну - жду тут обьект {  }
 function postBook(obj) {
@@ -131,19 +128,144 @@ function deleteBook(id) {
 //полуть список всех книг - ничего не жду)
 async function getBook() {
   let res = null;
-  if (LOGIN && userId) {
-    await get(child(ref(getDatabase()), `users/${userId}`))
-      .then(snapshot => {
-        if (snapshot.exists()) {
-          console.log(snapshot.val());
-          res = [...Object.values(snapshot.val())];
-        } else {
-          console.log('No data available');
-        }
+
+  await onAuthStateChanged(auth, user => {
+    if (user) {
+      userId = user.uid;
+    }
+  });
+
+  await get(child(ref(getDatabase()), `users/${userId}`))
+    .then(snapshot => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+        res = [...Object.values(snapshot.val())];
+      } else {
+        console.log('No data available');
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  return res;
+}
+
+const modalSignUp = document.querySelector('[modalSignUp]');
+const modalForm = document.querySelector('[modalForm]');
+const buttonSignUp = document.querySelector('[buttonSignUp]');
+const buttonSignIn = document.querySelector('[buttonSignIn]');
+
+modalSignUp.addEventListener('click', modalSignUpFunc);
+modalForm.addEventListener('submit', modalFormFunc);
+buttonSignUp.addEventListener('click', buttonSignUpFunc);
+buttonSignIn.addEventListener('click', buttonSignInFunc);
+
+let signUpBoll = true;
+
+const collapsibles = document.querySelectorAll('.k-modal__input');
+collapsibles.forEach(collapsible => {
+  collapsible.addEventListener('input', e => {
+    if (e.target.value) e.target.classList.add('hide-label');
+    else e.target.classList.remove('hide-label');
+  });
+});
+
+function showButtonActive(active, nActive) {
+  active.classList.add('active');
+  nActive.classList.remove('active');
+}
+
+function buttonSignUpFunc() {
+  signUpBoll = true;
+  showButtonActive(buttonSignUp, buttonSignIn);
+  modalForm.elements.name.closest('.k-modal__block').style.display = 'block';
+  modalForm.publish.textContent = 'Sign up';
+}
+
+function buttonSignInFunc() {
+  signUpBoll = false;
+  showButtonActive(buttonSignIn, buttonSignUp);
+  modalForm.elements.name.closest('.k-modal__block').style.display = 'none';
+  modalForm.publish.textContent = 'Sign In';
+}
+
+function openSignUpFunc() {
+  modalSignUp.classList.add('k-modal--active');
+  document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', modalSignUpFuncKey);
+}
+
+function modalSignUpFunc(e) {
+  if (e.target === e.currentTarget || e.target.closest('.k-modal__close'))
+    closeModalForm();
+}
+
+function modalSignUpFuncKey(e) {
+  if (e.code === 'Escape') closeModalForm();
+}
+
+function closeModalForm() {
+  modalSignUp.classList.remove('k-modal--active');
+  document.body.style.overflow = 'auto';
+  document.removeEventListener('keydown', modalSignUpFuncKey);
+}
+
+function modalFormFunc(e) {
+  e.preventDefault();
+  const { name, email, password } = e.target.elements;
+
+  if (!signUpBoll) return modalLoginFunc(email.value, password.value);
+
+  if (name.value && email.value && password.value) {
+    createUser(email.value, password.value)
+      .then(userCredential => {
+        console.log(userCredential);
+
+        localStorage.setItem('user-name', name.value);
+        modalForm.reset();
+        collapsibles.forEach(collapsible => {
+          collapsible.classList.remove('hide-label');
+        });
+
+        closeModalForm();
+        sendEmail();
       })
       .catch(error => {
-        console.error(error);
+        console.log(error);
+        Notiflix.Notify.failure('Случилась ошибка, повтори снова!');
       });
+  } else {
+    Notiflix.Notify.failure('Введите все поля!');
   }
-  return res;
+}
+
+function modalLoginFunc(email, password) {
+  signIn(email, password)
+    .then(userCredential => {
+      console.log(userCredential);
+      userId = userCredential.user.uid;
+
+      localStorage.setItem('uid', userId);
+      loginFunc(userCredential.user.emailVerified);
+
+      modalForm.reset();
+      collapsibles.forEach(collapsible => {
+        collapsible.classList.remove('hide-label');
+      });
+      closeModalForm();
+    })
+    .catch(error => {
+      console.log(error);
+      Notiflix.Notify.failure('Случилась ошибка, повтори снова!');
+    });
+}
+
+function sendEmail() {
+  sendEmailVerification(auth.currentUser).then(() => {
+    console.log('SENT EMAIL => CHECK');
+    Notiflix.Notify.success(
+      'Успешно зарегистрировано, проверьте почту для верификации!',
+      timer
+    );
+  });
 }
