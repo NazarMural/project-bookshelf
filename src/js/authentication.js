@@ -43,7 +43,7 @@ onAuthStateChanged(auth, user => {
     userId = user.uid;
     localStorage.setItem('uid', userId);
     console.log('User signed in:', user);
-    checkLoginVerified(user.emailVerified);
+    loginFunc(user.emailVerified);
   } else {
     localStorage.removeItem('uid');
     LOGIN = false;
@@ -73,7 +73,7 @@ function signIn(email, password) {
       console.log(userCredential);
       userId = userCredential.user.uid;
       localStorage.setItem('uid', userId);
-      checkLoginVerified(userCredential.user.emailVerified);
+      loginFunc(userCredential.user.emailVerified);
     })
     .catch(error => {
       console.log(error);
@@ -91,8 +91,18 @@ function signOutLog() {
     .catch(error => {});
 }
 
-function checkLoginVerified(verified) {
-  verified ? (LOGIN = true) : (LOGIN = false);
+function loginFunc(verified) {
+  if (verified) {
+    LOGIN = true;
+    //ДОБАВИть Функцию которая рендерит Хедер для пользователя регистрационных
+  } else {
+    LOGIN = false;
+    //ДОБАВИть Функцию которая рендерит Хедер НЕ для регистрационных
+  }
+}
+
+function checkLogin() {
+  return LOGIN;
 }
 
 // Задать масив
@@ -100,31 +110,40 @@ function checkLoginVerified(verified) {
 
 //Добавить книгу одну - жду тут обьект {  }
 function postBook(obj) {
-  const dbRef = ref(getDatabase(), `users/${userId}/${obj._id}`);
-  update(dbRef, obj);
+  if (LOGIN && userId) {
+    const dbRef = ref(getDatabase(), `users/${userId}/${obj._id}`);
+    update(dbRef, obj);
+    return true;
+  }
+  return false;
 }
 
 //удалить книгу одну - жду тут айди книги
 function deleteBook(id) {
-  const dbRef = ref(getDatabase(), `users/${userId}/${id}`);
-  remove(dbRef);
+  if (LOGIN && userId) {
+    const dbRef = ref(getDatabase(), `users/${userId}/${id}`);
+    remove(dbRef);
+    return true;
+  }
+  return false;
 }
 
 //полуть список всех книг - ничего не жду)
 async function getBook() {
   let res = null;
-  await get(child(ref(getDatabase()), `users/${userId}`))
-    .then(snapshot => {
-      if (snapshot.exists()) {
-        console.log(snapshot.val());
-        res = [...Object.values(snapshot.val())];
-      } else {
-        console.log('No data available');
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
-
+  if (LOGIN && userId) {
+    await get(child(ref(getDatabase()), `users/${userId}`))
+      .then(snapshot => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+          res = [...Object.values(snapshot.val())];
+        } else {
+          console.log('No data available');
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
   return res;
 }
