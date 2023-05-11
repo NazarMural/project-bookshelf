@@ -3,6 +3,20 @@
     max-height: 472px;
     overflow-x: hidden;
     overflow-y: auto;
+}
 
-    border: 1px solid red;
+.list-categories {
+    list-style: none;
+}
+
+.category__item {
+    margin-top: 32px;
+}
+
+.current-category {
+    text-transform: uppercase;
+}
+
+.category__link {
+    text-decoration: none;
 }
