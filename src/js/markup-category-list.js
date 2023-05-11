@@ -4,7 +4,7 @@ const listCategory = document.querySelector('.list-categories');
 
 function getMarkupAllCategory() {
   const markup =
-    '<li><a href="./index.html" class="category__link">All category</a></li>';
+    '<li><a href="./index.html" class="category__link-all">All category</a></li>';
   listCategory.insertAdjacentHTML('afterbegin', markup);
 }
 
@@ -28,3 +28,4 @@ async function getMarkupCategoryList() {
 }
 
 getMarkupCategoryList();
+// export { getMarkupCategoryList };

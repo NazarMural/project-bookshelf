@@ -23,4 +23,47 @@
 
 .main {
     display: flex;
+    gap: 40px;
+}
+
+
+
+.category-books-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.category-books__item {
+    width: calc((100% - 4*24px)/5);
+
+}
+
+// .category-books__img-container {
+//     aspect-ratio: 2/3;
+//     /* flex-grow: 1; */
+//     object-fit: cover;
+//     overflow: hidden;
+// }
+
+.category-books__img {
+    width: 180px;
+    height: 256;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.category-books__title {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    /* identical to box height, or 112% */
+
+    letter-spacing: -0.04em;
+    margin-bottom: 4px;
 }
