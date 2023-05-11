@@ -1,5 +1,7 @@
 body {
     font-family: 'DM Sans';
+    padding: 0;
+    margin: 0;
 }
 
 .container {
@@ -18,7 +20,9 @@ body {
     }
 }
 
-.main {
+.main.container {
+    padding-top: 110px;
+
     @media screen and (min-width: 1440px) {
         display: flex;
         gap: 40px;

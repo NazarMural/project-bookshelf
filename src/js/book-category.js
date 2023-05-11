@@ -1,10 +1,8 @@
 import { fetchCategoryList } from './fetch-category';
+import { allCategoryMarkup } from './markup-top-books';
 
 const listCategory = document.querySelector('.list-categories');
 const bookSection = document.querySelector('.books-cards__list');
-
-const sectionTitleAccent = document.querySelector('.books-cards__title-accent');
-console.log(sectionTitleAccent);
 
 listCategory.addEventListener('click', onClickCategory);
 
@@ -12,23 +10,27 @@ async function onClickCategory(evt) {
   bookSection.classList.remove('top-books-list');
   bookSection.classList.add('category-books-list');
   evt.preventDefault();
-  const sectionTitle = document.querySelector('.books-cards__title');
+  if (evt.target.classList.contains('category__link-all')) {
+    removeMarkup();
+    evt.target.classList.add('current-category');
+    addHeading('Best Sellers Books');
+    allCategoryMarkup();
+  }
   if (evt.target.classList.contains('category__link')) {
-    sectionTitle.remove();
-    removeCurrentClass();
-    bookSection.innerHTML = '';
+    removeMarkup();
     const category = evt.target.textContent;
     evt.target.classList.add('current-category');
     addHeading(category);
     const categoryItem = await fetchCategoryList(category);
     createMarkupBooks(categoryItem);
   }
-  if (evt.target.classList.contains('category__link-all')) {
-    sectionTitle.remove();
-    removeCurrentClass();
-    evt.target.classList.add('current-category');
-    addHeading('Best Sellers Books');
-  }
+}
+
+function removeMarkup() {
+  const sectionTitle = document.querySelector('.books-cards__title');
+  sectionTitle.remove();
+  removeCurrentClass();
+  bookSection.innerHTML = '';
 }
 
 function addHeading(string) {
