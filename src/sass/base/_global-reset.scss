@@ -1,0 +1,30 @@
+/* Скидання базових властивостей для посилань (a або клас .link */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Скидання базових властивостей у списків (ul або клас .list) */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Властивості для коректного відображення зображень */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

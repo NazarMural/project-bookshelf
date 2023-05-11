@@ -22,5 +22,78 @@
 }
 
 .main {
-    display: flex;
+    @media screen and (min-width: 1440px) {
+        display: flex;
+        gap: 40px;
+    }
+}
+
+
+
+.category-books-list {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 24px;
+        margin-top: 40px;
+    }
+}
+
+.category-books__item {
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+        width: calc((100% - 4*24px)/3);
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: calc((100% - 4*24px)/5);
+    }
+
+}
+
+// .category-books__img-container {
+//     aspect-ratio: 2/3;
+//     /* flex-grow: 1; */
+//     object-fit: cover;
+//     overflow: hidden;
+// }
+
+.category-books__img {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 14px;
+
+    @media screen and (min-width: 1440px) {
+        width: 180px;
+        height: 256px;
+
+    }
+}
+
+.category-books__title {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    /* identical to box height, or 112% */
+
+    letter-spacing: -0.04em;
+    margin-bottom: 4px;
+}
+
+.books-cards__title {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 52px;
+    /* identical to box height, or 108% */
+
+    letter-spacing: -0.04em;
+
 }
