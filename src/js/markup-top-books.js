@@ -1,6 +1,6 @@
 import { fetchSearchResult } from './fetch-search-result';
 import { fetchCategoryList } from './fetch-category';
-// import { createMarkupBooks } from './book-category';
+import { createMarkupBooks } from './book-category';
 
 const refs = {
   booksCardsList: document.querySelector('.books-cards__list'),
@@ -11,25 +11,31 @@ const refs = {
 
 refs.booksCardsList.addEventListener('click', onClickSeeMore);
 
-fetchSearchResult('top-books')
-  .then(categoriesTopBooks => {
-    console.log(refs.booksCardsList);
-    allCategoryMarkup(categoriesTopBooks);
-  })
-  .catch(() => {
-    console.log('Проблема з запитом!');
-  });
+allCategoryMarkup();
 
-export function allCategoryMarkup(categoriesTopBooks) {
-  refs.booksCardsList.innerHTML = '';
-  refs.booksCardsTitle.textContent = 'Best Sellers Books';
+export function allCategoryMarkup() {
+  fetchSearchResult('top-books')
+    .then(categoriesTopBooks => {
+      console.log(refs.booksCardsList);
 
-  createCategoriesTopBooksMarkup(categoriesTopBooks);
+      refs.booksCardsList.classList.remove('category-books-list');
+      refs.booksCardsList.classList.add('top-books-list');
 
-  refs.topBooksCategories = document.querySelectorAll('.top-books-categories');
-  refs.booksCardsButton = document.querySelector('.books-cards__button');
+      refs.booksCardsList.innerHTML = '';
+      refs.booksCardsTitle.textContent = 'Best Sellers Books';
 
-  createTopBooksMarkup(categoriesTopBooks);
+      createCategoriesTopBooksMarkup(categoriesTopBooks);
+
+      refs.topBooksCategories = document.querySelectorAll(
+        '.top-books-categories'
+      );
+      refs.booksCardsButton = document.querySelector('.books-cards__button');
+
+      createTopBooksMarkup(categoriesTopBooks);
+    })
+    .catch(() => {
+      console.log('Проблема з запитом!');
+    });
 }
 
 function createTopBooksMarkup(categoriesTopBooks) {
@@ -79,24 +85,10 @@ async function onClickSeeMore(evt) {
     return;
   }
   console.log('Ти натиснув на кнопку.');
+  refs.booksCardsList.classList.add('category-books-list');
   const category = evt.target.dataset.list_name;
   refs.booksCardsTitle.textContent = category;
   refs.booksCardsList.innerHTML = '';
   const categoryItem = await fetchCategoryList(category);
   createMarkupBooks(categoryItem);
-}
-
-function createMarkupBooks(category) {
-  const markup = category
-    .map(item => {
-      const { book_image, title, author } = item;
-      return `
-    <li>
-    <img src="${book_image}" alt="${title}">
-    <h2>${title}</h2>
-    <p>${author}</p>
-    </li>`;
-    })
-    .join('');
-  refs.booksCardsList.insertAdjacentHTML('beforeend', markup);
 }
