@@ -1,4 +1,5 @@
 import { fetchSearchResult } from './js/fetch-search-result';
+import * as Authentication from './js/authentication';
 
 const refs = {
   listCategories: document.querySelector('.list-categories'),
