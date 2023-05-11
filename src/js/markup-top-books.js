@@ -1,7 +1,7 @@
 import { fetchSearchResult } from './fetch-search-result';
 
 const refs = {
-  sectionBooksCards: document.querySelector('.section-books-cards'),
+  booksCardsList: document.querySelector('.books-cards__list'),
 };
 
 fetchSearchResult('top-books')
@@ -58,7 +58,7 @@ function createCategoriesTopBooksMarkup(categories) {
     )
     .join('');
 
-  refs.sectionBooksCards.insertAdjacentHTML('beforeend', markup);
+  refs.booksCardsList.insertAdjacentHTML('beforeend', markup);
 }
 
 // function addMarkup(ref, markup) {
