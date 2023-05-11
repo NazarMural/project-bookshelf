@@ -84,7 +84,6 @@ function signOutLog() {
 function loginFunc(verified) {
   if (verified) {
     LOGIN = true;
-
     example.innerHTML =
       'ТЫ ЗАШЕЛ КРАСАВЧИК <button type="button" logOut>Log out</button>';
 
