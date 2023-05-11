@@ -262,7 +262,7 @@ function modalLoginFunc(email, password) {
     })
     .catch(error => {
       console.log(error);
-      Notiflix.Notify.failure('Случилась ошибка, повтори снова!');
+      Notiflix.Notify.failure('Неверный пароль или почта!');
     });
 }
 
