@@ -1,5 +1,5 @@
 .section-categories {
-    max-width: 356px;
+    width: 356px;
     max-height: 472px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -19,4 +19,8 @@
 
 .category__link {
     text-decoration: none;
+}
+
+.main {
+    display: flex;
 }
