@@ -1,0 +1,54 @@
+.shopList {
+  &__title {
+    font-family: 'DM Sans';
+    color: $primary-text-color;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+    margin: 0;
+    margin-bottom: 120px;
+    @media screen and (min-width: $tablet) {
+      font-size: 48px;
+      line-height: 1.08;
+    }
+  }
+  &__img {
+    width: 265px;
+    @media screen and (min-width: $tablet) {
+      width: 322px;
+    }
+  }
+  &__accent {
+    color: $secondary-accent-color;
+  }
+  &__text {
+    width: 215px;
+    text-align: center;
+    margin: 0;
+    user-select: none;
+
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.02em;
+    color: rgba(0, 0, 0, 0.6);
+    @media screen and (min-width: $tablet) {
+      font-size: 18px;
+      line-height: 1.33;
+      width: 335px;
+    }
+  }
+  &__imgContainer {
+    display: flex;
+    flex-direction: column;
+    width: 265px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: $tablet) {
+      width: 349px;
+    }
+  }
+}
