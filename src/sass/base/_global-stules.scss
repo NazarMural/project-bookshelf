@@ -1,3 +1,7 @@
+body {
+    font-family: 'DM Sans';
+}
+
 .container {
     max-width: $mobile;
     margin: 0 auto;
@@ -11,5 +15,12 @@
     @media screen and (min-width: $desktop) {
         max-width: $desktop;
         padding: 0 24px;
+    }
+}
+
+.main {
+    @media screen and (min-width: 1440px) {
+        display: flex;
+        gap: 40px;
     }
 }
