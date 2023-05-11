@@ -20,7 +20,6 @@ async function onClickCategory(evt) {
     const category = evt.target.textContent;
     evt.target.classList.add('current-category');
     addHeading(category);
-    // sectionTitle.textContent = category;
     const categoryItem = await fetchCategoryList(category);
     createMarkupBooks(categoryItem);
   }
@@ -35,24 +34,9 @@ async function onClickCategory(evt) {
 function addHeading(string) {
   const arr = string.split(' ');
   const lastElement = arr.pop(arr[arr.length - 1]);
-  console.log(arr);
-  const markup = `<h1 class="books-cards__title">${arr.join(
-    ' '
-  )}<span class="books-cards__title-accent"> ${lastElement}</span></h1>`;
-  console.log(markup);
-  // sectionTitle.textContent = arr.join(' ');
-  // sectionTitleAccent.textContent = lastElement;
-  // sectionTitle = markup;
+  const markup = `<h1 class="books-cards__title">${arr.join(' ')}
+        <span class="books-cards__title-accent"> ${lastElement}</span></h1>`;
   bookSection.insertAdjacentHTML('beforebegin', markup);
-
-  // .map((item, _, arr) => {
-  //     if (item === arr[arr.length - 1]) {
-  //       console.log(item);
-  //       // item.style.color = '#4F2EE8';
-  //     }
-  //     return item;
-  //   })
-  // .join(' ');
 }
 
 function removeCurrentClass() {
@@ -64,8 +48,6 @@ function removeCurrentClass() {
   if (categoryLinkAll.classList.contains('current-category')) {
     categoryLinkAll.classList.remove('current-category');
   }
-  // const currentCategory = document.querySelector('.current-category');
-  // currentCategory.classList.remove('current-category');
 }
 
 function createMarkupBooks(category) {
@@ -89,15 +71,3 @@ function createMarkupBooks(category) {
 }
 
 export { createMarkupBooks };
-// const categoryTitle = evt.target.textContent
-// .split(' ')
-// .map((item, _, arr) => {
-//   if (item === arr[arr.length - 1]) {
-//     console.log(item);
-//     // item.style.color = '#4F2EE8';
-//   }
-//   return item;
-// })
-// .join(' ');
-
-// console.log(categoryTitle);
