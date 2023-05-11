@@ -36,7 +36,12 @@ const auth = getAuth();
 let userId = null;
 let LOGIN = false;
 
-const example = document.querySelector('.js-header-example');
+const menuHeader = document.querySelector('.js-list__nav');
+const openSignUp = document.querySelector('[openSignUp]');
+openSignUp.addEventListener('click', openSignUpFunc);
+
+const logout = document.querySelector('[logOut]');
+logout.addEventListener('click', signOutLog);
 
 const timer = {
   timeout: 5000,
@@ -84,19 +89,21 @@ function signOutLog() {
 function loginFunc(verified) {
   if (verified) {
     LOGIN = true;
-    example.innerHTML =
-      'ТЫ ЗАШЕЛ КРАСАВЧИК <button type="button" logOut>Log out</button>';
 
-    const logout = document.querySelector('[logOut]');
-    logout.addEventListener('click', signOutLog);
+    /*menuHeader.innerHTML =
+      'ТЫ ЗАШЕЛ КРАСАВЧИК <button type="button" logOut>Log out</button>';*/
+
+    menuHeader.classList.add('show');
+    logout.classList.add('show');
+    openSignUp.classList.remove('show');
+
     //ДОБАВИть Функцию которая рендерит Хедер для пользователя регистрационных
   } else {
     LOGIN = false;
     //ДОБАВИть Функцию которая рендерит Хедер НЕ для регистрационных
-    example.innerHTML = '<button type="button" openSignUp>Sign up</button>';
-
-    const openSignUp = document.querySelector('[openSignUp]');
-    openSignUp.addEventListener('click', openSignUpFunc);
+    menuHeader.classList.remove('show');
+    logout.classList.remove('show');
+    openSignUp.classList.add('show');
   }
 }
 
