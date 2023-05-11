@@ -43,3 +43,16 @@ function createMarkupBooks(category) {
     .join('');
   bookSection.insertAdjacentHTML('beforeend', markup);
 }
+
+// const categoryTitle = evt.target.textContent
+// .split(' ')
+// .map((item, _, arr) => {
+//   if (item === arr[arr.length - 1]) {
+//     console.log(item);
+//     // item.style.color = '#4F2EE8';
+//   }
+//   return item;
+// })
+// .join(' ');
+
+// console.log(categoryTitle);
