@@ -44,6 +44,7 @@ function createMarkupBooks(category) {
   bookSection.insertAdjacentHTML('beforeend', markup);
 }
 
+export {createMarkupBooks}
 // const categoryTitle = evt.target.textContent
 // .split(' ')
 // .map((item, _, arr) => {
