@@ -3,6 +3,8 @@ import { fetchCategoryList } from './fetch-category';
 import { createMarkupBooks } from './book-category';
 import { addHeading } from './book-category';
 import { loader, loadRemove } from './loader';
+import { scrollUp } from './button-up';
+
 const refs = {
   booksCardsList: document.querySelector('.books-cards__list'),
   booksCardsTitle: null,
@@ -102,6 +104,9 @@ async function onClickSeeMore(evt) {
   refs.booksCardsTitle.remove();
   addHeading(category);
   refs.booksCardsList.innerHTML = '';
+  loader();
   const categoryItem = await fetchCategoryList(category);
+  loadRemove();
+  scrollUp();
   createMarkupBooks(categoryItem);
 }
