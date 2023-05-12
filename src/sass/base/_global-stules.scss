@@ -1,7 +1,17 @@
+body {
+    font-family: 'DM Sans';
+    padding: 0;
+    margin: 0;
+    overflow: overlay;
+    background-color: $bg-color;
+}
+
 .container {
     max-width: $mobile;
     margin: 0 auto;
     padding: 0 20px;
+
+    box-sizing: border-box;
 
     @media screen and (min-width: $tablet) {
         max-width: $tablet;
@@ -11,5 +21,24 @@
     @media screen and (min-width: $desktop) {
         max-width: $desktop;
         padding: 0 24px;
+    }
+}
+
+.main-container {
+    padding-top: 110px;
+
+    @media screen and (min-width: 1440px) {
+        display: flex;
+        gap: 40px;
+    }
+}
+
+.section-books-cards {
+    @media screen and (max-width: 767px) {
+        margin-top: 40px;
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1439px) {
+        margin-top: 100px;
     }
 }
