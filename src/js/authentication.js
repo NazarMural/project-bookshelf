@@ -212,7 +212,7 @@ function modalSignUpFuncKey(e) {
 
 function closeModalForm() {
   modalSignUp.classList.remove('k-modal--active');
-  document.body.style.overflow = 'auto';
+  document.body.style.overflow = 'overlay';
   document.removeEventListener('keydown', modalSignUpFuncKey);
 }
 
@@ -275,3 +275,5 @@ function sendEmail() {
     );
   });
 }
+
+export { postBook, deleteBook, getBook, openSignUpFunc };

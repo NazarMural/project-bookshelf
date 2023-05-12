@@ -1,0 +1,48 @@
+.button-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background-color: rgba(79, 46, 232, 0.3);
+    border: 0px;
+    border-radius: 50%;
+    padding: 5px;
+    height: 64px;
+    width: 64px;
+
+    animation: button-animation 1s infinite;
+}
+
+@keyframes button-animation {
+    0% {
+        padding: 5px;
+    }
+    25% {
+        padding: 6px;
+    }
+    50% {
+        padding: 7px;
+    }
+    75% {
+        padding: 8px;
+    }
+    100% {
+        padding: 9px;
+    }
+}
+
+/* Задаємо параметри анімації */
+
+.button-up__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $secondary-accent-color;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.button-up__icon {
+    fill: #ffffff;
+}
