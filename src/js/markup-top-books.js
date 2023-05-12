@@ -4,7 +4,7 @@ import { createMarkupBooks } from './book-category';
 import { addHeading } from './book-category';
 const refs = {
   booksCardsList: document.querySelector('.books-cards__list'),
-  booksCardsTitle: document.querySelector('.books-cards__title'),
+  booksCardsTitle: null,
   topBooksCategories: null,
   booksCardsButton: null,
 };
@@ -47,7 +47,7 @@ function createTopBooksMarkup(categoriesTopBooks) {
     const markup = categoriesTopBooks[numberCategories].books
       .map(({ _id, book_image, title, author }) => {
         return `
-          <li data-id="${_id}" class="category-books__item">
+          <li data-id="${_id}" class="category-books__item is-hidden-books">
           <a href="" class="category-books__link">
           <div class="category-books__img-thumb">
           <img src="${book_image}" alt="${title}" class="category-books__img">
@@ -73,7 +73,9 @@ function createCategoriesTopBooksMarkup(categories) {
     <ul class="top-books-categories__list">
                 
     </ul>
+    <div class="top-books__button-box">
     <button class="top-books__button" data-list_name="${list_name}">See More</button>
+    </div>
     </li>
     `
     )
@@ -89,9 +91,13 @@ async function onClickSeeMore(evt) {
     return;
   }
   console.log('Ти натиснув на кнопку.');
+  refs.booksCardsList.classList.remove('top-books-list');
   refs.booksCardsList.classList.add('category-books-list');
   const category = evt.target.dataset.list_name;
-  refs.booksCardsTitle.textContent = category;
+  console.log(category);
+  refs.booksCardsTitle = document.querySelector('.books-cards__title');
+  refs.booksCardsTitle.remove();
+  addHeading(category);
   refs.booksCardsList.innerHTML = '';
   const categoryItem = await fetchCategoryList(category);
   createMarkupBooks(categoryItem);
