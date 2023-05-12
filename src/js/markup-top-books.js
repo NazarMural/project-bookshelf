@@ -27,9 +27,9 @@ export function allCategoryMarkup() {
       createCategoriesTopBooksMarkup(categoriesTopBooks);
 
       refs.topBooksCategories = document.querySelectorAll(
-        '.top-books-categories'
+        '.top-books-categories__list'
       );
-      refs.booksCardsButton = document.querySelector('.books-cards__button');
+      refs.booksCardsButton = document.querySelector('.top-books__button');
 
       createTopBooksMarkup(categoriesTopBooks);
     })
@@ -47,10 +47,10 @@ function createTopBooksMarkup(categoriesTopBooks) {
     const markup = categoriesTopBooks[numberCategories].books
       .map(({ book_image, title, author }) => {
         return `
-          <li>
-          <img src="${book_image}" alt="${title}">
-          <h2>${title}</h2>
-          <p>${author}</p>
+          <li class="top-books-categories__item">
+          <img class="top-books-categories__img" src="${book_image}" alt="${title}">
+          <h2 class="top-books-categories__title">${title}</h2>
+          <p class="top-books-categories__author">${author}</p>
           </li>`;
       })
       .join('');
@@ -63,12 +63,12 @@ function createCategoriesTopBooksMarkup(categories) {
   const markup = categories
     .map(
       ({ list_name }) => `
-    <li class="books-cards__item">
+    <li class="top-books__item">
     <h2 class="top-books-title">${list_name}</h2>
-    <ul class="top-books-categories">
+    <ul class="top-books-categories__list">
                 
     </ul>
-    <button class="books-cards__button" data-list_name="${list_name}">See More</button>
+    <button class="top-books__button" data-list_name="${list_name}">See More</button>
     </li>
     `
     )
@@ -79,8 +79,7 @@ function createCategoriesTopBooksMarkup(categories) {
 
 async function onClickSeeMore(evt) {
   evt.preventDefault();
-
-  if (!evt.target.classList.contains('books-cards__button')) {
+  if (!evt.target.classList.contains('top-books__button')) {
     console.log('Ти натиснув не на кнопку.');
     return;
   }
