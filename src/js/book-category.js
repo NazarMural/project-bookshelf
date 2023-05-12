@@ -20,7 +20,6 @@ async function onClickCategory(evt) {
     removeMarkup();
     const category = evt.target.textContent;
     evt.target.classList.add('current-category');
-    addHeading(category);
     const categoryItem = await fetchCategoryList(category);
     createMarkupBooks(categoryItem);
   }
