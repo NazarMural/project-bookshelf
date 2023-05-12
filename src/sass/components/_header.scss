@@ -109,7 +109,8 @@
 .header__burger--close{
     background-color: $bg-color-header;
     border:transparent;
-  
+  @media (min-width: 768px) {
+            display: none;}
     
 
     

@@ -8,8 +8,8 @@
     height: 100%;
     padding: 84px 222px 20px 20px;
 
-    background-image: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%),url(/src/images/group.jpg);
-    // background-image: url(/src/images/group.jpg);
+    background-image: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -19,7 +19,10 @@
     transform: translateY(0);
     display: block;
     // transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    @media (min-width: 768px) {
+            display: none;}
 }
+
 
 
 .mobile-menu--list{
