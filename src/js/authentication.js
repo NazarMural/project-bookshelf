@@ -96,6 +96,7 @@ function loginFunc(verified) {
     menuHeader.classList.add('show');
     logout.classList.add('show');
     openSignUp.classList.remove('show');
+    menuHeader.closest('.header__box').classList.add('autorizationstyle');
 
     //ДОБАВИть Функцию которая рендерит Хедер для пользователя регистрационных
   } else {
@@ -104,6 +105,7 @@ function loginFunc(verified) {
     menuHeader.classList.remove('show');
     logout.classList.remove('show');
     openSignUp.classList.add('show');
+    menuHeader.closest('.header__box').classList.remove('autorizationstyle');
   }
 }
 

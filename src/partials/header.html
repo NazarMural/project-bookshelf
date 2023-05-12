@@ -1,5 +1,6 @@
 <header class="header">
-  <div class="container header__container">
+  <div class="container">
+    <div class=" header__container">
     <a class="logo" href="./index.html">
       <svg class="logo__card" width="24px" height="24px">
         <use href="./images/sprite.svg#icon-logo"></use>
@@ -8,6 +9,7 @@
         <use href="./images/sprite.svg#icon-bookshelf"></use>
       </svg>
     </a>
+    
     <nav class="header__box">
       <ul class="list__nav js-list__nav">
         <li>
@@ -33,10 +35,16 @@
           <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
         </svg>
       </a>
+<button class="log-out" type="button" logOut>Log out
+  <svg width="20px" height="20px"> 
+          <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
+        </svg>
+</button>
+ 
 </div>
       
 
-      <button class="log-out" type="button" logOut>Log out</button>
+      
 
       <button class="header__burger--open js-open-menu" type="button">
         <svg class="icon__burger--open" width="28px" height="28px">
@@ -49,12 +57,19 @@
             </svg>
             </button>
     </nav>
+    </div>
   </div>
 </header>
 
+  
 <div class="mobile-menu js-menu-container">
-  <div class="container">
-    
+  <div class="mobile-menu__container">
+    <a class="mobile-menu__singin--link" href="#" openSignUp
+        >Sign up
+        <svg width="20px" height="20px">
+          <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
+        </svg>
+      </a>
     <ul class="mobile-menu--list">
       <li class="mobile-menu--home current"><a href="./index.html">Home</a></li>
       <li class="mobile-menu--shoping">
@@ -64,5 +79,10 @@
         </svg>
       </li>
     </ul>
+    <button class="mobile-menu--log-out" type="button" logOut>Log out
+  <svg width="20px" height="20px"> 
+          <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
+        </svg>
+</button>
   </div>
-</div>
+</div> 
