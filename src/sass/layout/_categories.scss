@@ -5,9 +5,9 @@
     overflow-y: auto;
 }
 
-.list-categories {
-    list-style: none;
-}
+// .list-categories {
+//     list-style: none;
+// }
 
 .category__item {
     margin-top: 32px;
@@ -20,20 +20,30 @@
     font-size: 18px;
     line-height: 1.33;
     letter-spacing: -0.02em;
+    color: $secondary-text-color;
 
-    color: $secondary-text-color
+    .dark-theme & {
+        color: $secondary-text-color-darkt;
+    }
 }
+
+// .dark-theme .category__link,
+// .dark-theme .category__link-all {
+//     color: $secondary-text-color-darkt;
+// }
 
 
 .current-category {
     font-weight: 700;
     font-size: 18px;
     line-height: 1.33;
-    /* identical to box height, or 133% */
-
     letter-spacing: -0.02em;
     text-transform: uppercase;
     color: $accent-text-color;
+
+    .dark-theme & {
+        color: $primary-accent-color
+    }
 }
 
 .category-books-list {
@@ -100,6 +110,7 @@
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     padding: 26px 0;
+    text-transform: uppercase;
 
 }
 
@@ -110,8 +121,6 @@
 
 
 .category-books__title {
-    font-family: 'DM Sans';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.12;
@@ -119,19 +128,39 @@
 
     letter-spacing: -0.04em;
     margin-bottom: 4px;
+    // width : 250px; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .dark-theme & {
+        color: $primary-text-color-darkt;
+    }
+}
+
+.category-books__author {
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $tertiary-text-color-darkt;
+
 }
 
 .books-cards__title {
-    font-family: 'DM Sans';
-    font-style: normal;
     font-weight: 700;
     font-size: 48px;
-    line-height: 52px;
-    /* identical to box height, or 108% */
-
+    line-height: 1.08;
     letter-spacing: -0.04em;
 }
 
 .books-cards__title-accent {
     color: $accent-text-color;
+}
+
+.dark-theme .books-cards__title {
+    color: $logo-color-darkt;
 }
