@@ -1,0 +1,65 @@
+<header class="header">
+  <div class="container__header">
+    <a class="logo" href="#">
+      <svg class="logo__card" width="24px" height="24px">
+        <use href="./images/sprite.svg#icon-logo"></use>
+      </svg>
+      <svg class="logo__text" width="77px" height="14px">
+        <use href="./images/sprite.svg#icon-bookshelf"></use>
+      </svg>
+    </a>
+    <nav class="header__box">
+      <ul class="list__nav js-list__nav">
+        <li>
+          <a class="header__link--home current js-link-home" href="./index.html"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a class="header__link--shoping js-link-shoping" href="#"
+            >Shopping list
+            <svg class="js-icon" width="20px" height="20px">
+              <use href="./images/sprite.svg#icon-uil_cart"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <input class="switch" type="checkbox" id="toggle" />
+
+      <a class="header__singin--link" href="#" openSignUp
+        >Sign up
+        <svg width="20px" height="20px">
+          <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
+        </svg>
+      </a>
+
+      <button class="log-out" type="button" logOut>Log out</button>
+
+      <button class="header__burger js-open-menu" type="button">
+        <svg class="button--burger" width="28px" height="28px">
+          <use href="./images/sprite.svg#icon-align-left"></use>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu js-menu-container">
+  <div class="container">
+    <!-- <button class="mobile-menu__close js-close-menu" type="button">
+                <svg class="button--close" width="28px" height="28px">
+              <use href="./images/sprite.svg#icon-x-close"></use>
+            </svg>
+            </button> -->
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li>
+        <a href="#">Shopping list </a>
+        <svg width="20px" height="20px">
+          <use href="./images/sprite.svg#icon-uil_cart"></use>
+        </svg>
+      </li>
+    </ul>
+  </div>
+</div>
