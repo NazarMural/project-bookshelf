@@ -1,0 +1,45 @@
+<div class="k-modal" modalSignUp>
+  <form class="k-modal__form" modalForm>
+    <button type="button" class="k-modal__close">
+      <img src="./images/k-x-close.svg" alt="close" />
+    </button>
+
+    <div class="k-modal__block">
+      <input class="k-modal__input" type="text" id="name" name="name" />
+      <label for="name">Name</label>
+    </div>
+
+    <div class="k-modal__block">
+      <input
+        class="k-modal__input"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        type="email"
+        id="email"
+        name="email"
+      />
+      <label for="email">email</label>
+      <img class="k-modal__icon" src="./images/k-mail.svg" alt="email" />
+    </div>
+
+    <div class="k-modal__block">
+      <input
+        class="k-modal__input"
+        type="password"
+        id="password"
+        name="password"
+        minlength="7"
+      />
+      <label for="password">password</label>
+      <img class="k-modal__icon" src="./images/k-lock.svg" alt="lock" />
+    </div>
+
+    <button name="publish" class="k-modal__submit" type="submit">
+      Sign up
+    </button>
+
+    <div class="k-modal__footer">
+      <button class="active" type="button" buttonSignUp>Sign up</button>
+      <button type="button" buttonSignIn>Sign In</button>
+    </div>
+  </form>
+</div>
