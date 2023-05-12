@@ -102,3 +102,10 @@ fill: $bg-color-header;
    border: 1.5px solid #111111;
    border-radius: 18px;
 }
+
+.mobile-menu--images{
+    top: 55%;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
