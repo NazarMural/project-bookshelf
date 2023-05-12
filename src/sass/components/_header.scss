@@ -98,6 +98,9 @@
 .icon__burger--open,
 .icon__burger--close{
     stroke: $primary-text-color;
+     @media (min-width: 768px) {
+        display: block;
+    }
     
 }
 .header__burger--open,
