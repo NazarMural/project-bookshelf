@@ -12,21 +12,23 @@
   <body>
     <!-- Header -->
 
+    <include src="./partials/header.html"></include>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <main>
-      <div class="main container">
-        <aside class="aside">
-          <section class="section-categories">
-            <ul class="list-categories"></ul>
+      <div class="main">
+        <div class="container main-container">
+          <aside class="aside">
+            <section class="section-categories">
+              <ul class="list-categories"></ul>
+            </section>
+            <section class="section-support"></section>
+          </aside>
+          <section class="section-books-cards">
+            <ul class="books-cards__list"></ul>
           </section>
-          <section class="section-support"></section>
-        </aside>
-        <section class="section-books-cards">
-          <h1 class="books-cards__title"></h1>
-          <ul class="books-cards__list"></ul>
-        </section>
+        </div>
       </div>
+      <include src="./partials/authentication.html"></include>
     </main>
-    <include src="./partials/aboutBookModal.html"></include>
   </body>
 </html>
