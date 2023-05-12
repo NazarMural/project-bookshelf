@@ -11,9 +11,8 @@
 
   <body>
     <!-- Header -->
-
     <include src="./partials/header.html"></include>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
+
     <main>
       <div class="main">
         <div class="container main-container">
@@ -29,8 +28,14 @@
         </div>
       </div>
       <include src="./partials/authentication.html"></include>
+      <button class="button-up" type="submit">
+        <div class="button-up__box">
+          <svg class="button-up__icon" width="24" height="24">
+            <use href="./images/sprite.svg#icon-arrow-scroll-up"></use>
+          </svg>
+        </div>
+      </button>
     </main>
-    <script type="module" src="../src/js/switch.js"></script>
-    <script type="module" src="../src/js/mobile.js"></script>
+    <include src="./partials/aboutBookModal.html"></include>
   </body>
 </html>

@@ -275,3 +275,5 @@ function sendEmail() {
     );
   });
 }
+
+export { postBook, deleteBook, getBook, openSignUpFunc };

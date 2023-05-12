@@ -99,4 +99,10 @@
         background-color: $secondary-accent-color;
         color: $primary-text-color-darkt;
     }
+
+    .dark-theme & {
+        background-color: $bg-color-darkt;
+        color: $primary-text-color-darkt;
+    }
+        
 }
