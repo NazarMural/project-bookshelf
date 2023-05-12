@@ -7,7 +7,12 @@ const bookContainer = document.querySelector('.book-container');
 booksCardsList.addEventListener('click', openModal);
 
 async function openModal(e) {
-  if (e.target.nodeName === 'IMG') {
+  if (
+    e.target.nodeName === 'DIV' ||
+    e.target.nodeName === 'P' ||
+    e.target.nodeName === 'H2' ||
+    e.target.nodeName === 'A'
+  ) {
     btnClose.addEventListener('click', onClosebtn);
     const bookItem = e.target.closest('.category-books__item');
     const bookId = bookItem.dataset.id;
