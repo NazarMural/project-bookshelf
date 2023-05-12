@@ -2,6 +2,7 @@ import { fetchSearchResult } from './fetch-search-result';
 import { fetchCategoryList } from './fetch-category';
 import { createMarkupBooks } from './book-category';
 import { addHeading } from './book-category';
+import { loader, loadRemove } from './loader';
 const refs = {
   booksCardsList: document.querySelector('.books-cards__list'),
   booksCardsTitle: null,
@@ -14,6 +15,7 @@ refs.booksCardsList.addEventListener('click', onClickSeeMore);
 allCategoryMarkup();
 
 export function allCategoryMarkup() {
+  loader();
   fetchSearchResult('top-books')
     .then(categoriesTopBooks => {
       console.log(refs.booksCardsList);
@@ -32,6 +34,7 @@ export function allCategoryMarkup() {
       refs.booksCardsButton = document.querySelector('.top-books__button');
 
       createTopBooksMarkup(categoriesTopBooks);
+      loadRemove();
     })
     .catch(() => {
       console.log('Проблема з запитом!');
