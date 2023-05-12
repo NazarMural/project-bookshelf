@@ -1,0 +1,78 @@
+.shoppinglist-card{
+    height: 170 px; 
+    width: 335px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    position: relative;
+
+}
+
+.shoppinglist-img{
+    height: 142px;
+    padding:  14px 0 14px 14px;
+    position: relative;
+}
+
+.shoppinglist-info{
+   
+  
+
+}
+
+
+.main_description{
+    position: absolute;
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+   
+    
+    
+    
+    
+}
+
+.shoppinglist-close{
+position: absolute;
+top: 14px;
+right: 14px;
+
+
+
+
+}
+
+.shoppinglist-close__icon{
+    
+}
+
+.shoppinglist-title{
+    font-size: 16px;
+    line-height: 1.125;
+    margin-bottom: 4px;
+    font-weight: 700px;
+  
+}
+
+.shoppinglist-text{
+    font-size: 12px;
+    line-height: 1.166;
+    margin-bottom: 8px;
+    color: #B4AFAF;
+}
+
+.shoppinglist-description{
+    font-size: 14px;
+    line-height: 1.285;
+    margin-bottom: 14px;
+    font-weight: 400px;
+}
+
+.shoppinglist-author{
+    font-size: 12px;
+    line-height: 1.166;
+    font-style: italic;
+    color: #B4AFAF;
+    
+}

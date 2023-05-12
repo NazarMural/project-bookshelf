@@ -7,6 +7,6 @@ import './js/authentication';
 import './js/button-up';
 import './js/switch';
 import './js/mobile';
-//import './js/shoppingList';
+import './js/shoppingList';
 
 import './js/loader';
