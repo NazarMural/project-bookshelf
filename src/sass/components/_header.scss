@@ -1,16 +1,18 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+// a{
+//     text-decoration: none;
+// }
 
-a{
-    text-decoration: none;
-}
-
-ul{
-    list-style: none;
-    padding:0;
-    margin: 0;
-}
-li{
-    padding: 0;
-}
+// ul{
+//     list-style: none;
+//     padding:0;
+//     margin: 0;
+// }
+// li{
+//     padding: 0;
+// }
 .header{
     z-index: 100;
     position: fixed;
@@ -20,6 +22,25 @@ li{
     border: 1.5px solid #111;
     border-radius: 0 0 8px 8px;
 }
+.container__header{
+
+   min-width: $mobile;
+    margin: 0 auto;
+    padding: 0 20px;
+    display:flex;
+
+    @media screen and (min-width: $tablet) {
+        min-width: $tablet;
+        padding: 0 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        min-width: $desktop;
+        padding: 0 24px;
+    }
+
+}
+
 .header__box{
     position:relative;
     display:flex;
@@ -39,24 +60,7 @@ li{
     }
    
 }
-.container__header{
 
-   min-width: $mobile;
-    margin: 0 auto;
-    padding: 0 20px;
-display:flex;
-
-    @media screen and (min-width: $tablet) {
-        min-width: $tablet;
-        padding: 0 32px;
-    }
-
-    @media screen and (min-width: $desktop) {
-        min-width: $desktop;
-        padding: 0 24px;
-    }
-
-}
 
 .list__nav{
 
@@ -72,7 +76,15 @@ display:flex;
 
 .header__burger{
     display:block;
+    background-color: $bg-color-header;
+    border:transparent;
    
+}
+
+.header__burger-close{
+    display:none;
+    background-color: $bg-color-header;
+    border:transparent;
 }
  @media  (min-width: 768px) {
         .header__burger{
@@ -91,9 +103,9 @@ display:flex;
 .button--burger{
     stroke:$primary-text-color;
 }
-.button--burger:hover{
-    stroke:$accent-text-color;
-}
+// .button--burger:hover{
+//     stroke:$accent-text-color;
+// }
 
 .logo{
     display: flex;
@@ -257,4 +269,5 @@ display:flex;
 
 .dark__text{
  color: $bg-color-header;
+ background: $primary-text-color;
 }
