@@ -1,6 +1,7 @@
 .section-support {
     width: 335px;
     height: 352px;
+    margin-top: 10px;
 
   @media screen and (min-width: $tablet) {
       height: 472px;
@@ -13,6 +14,7 @@
 }
 
 .support-container {
+  position: relative;
     max-width: 100%;
     padding-left: 40px;
     padding-bottom: 24px;
@@ -28,11 +30,13 @@
 }
 
 .list-support {
-    color: #7f1e1e;
+  height: 60%;
+    color:rgba(255, 255, 255, 1);
   text-align: center;
+
 }
 .support__item {
-    padding-bottom: 12px;
+    // padding-bottom: 12px;
     text-align: center;
 }
 
@@ -44,19 +48,34 @@
 .slider {
     margin-left: auto;
     margin-right: auto;
+position: absolute;
+bottom: 10px;
+left: 165px;
 }
 
 .support-title {
     display: flex;
     gap: 12px;
+    font-weight: 700;
+    font-family: DM Sans;
+    line-height: 1.28;
     font-size: 28px;
     text-align: left;
     color: $primary-text-color-darkt;
   }
 
  .support__image {
-    filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(80%);
-fill: rgba(255, 255, 255, 1);
-color: fff;
+filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
+fill: inherit;
+color: inherit;
 opacity: 100%;
  }
+
+ .swiper {
+  width: 335px;
+  height: 296px;
+}
+
+// .swiper-button-next {
+//   border-radius: 50%;
+// }
