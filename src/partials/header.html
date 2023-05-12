@@ -24,8 +24,8 @@
           </a>
         </li>
       </ul>
-
-      <input class="switch" type="checkbox" id="toggle" />
+<div class="header__content">
+<input class="switch" type="checkbox" id="toggle" />
 
       <a class="header__singin--link" href="#" openSignUp
         >Sign up
@@ -33,30 +33,33 @@
           <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
         </svg>
       </a>
+</div>
+      
 
       <button class="log-out" type="button" logOut>Log out</button>
 
-      <button class="header__burger js-open-menu" type="button">
-        <svg class="button--burger" width="28px" height="28px">
+      <button class="header__burger--open js-open-menu" type="button">
+        <svg class="icon__burger--open" width="28px" height="28px">
           <use href="./images/sprite.svg#icon-align-left"></use>
         </svg>
       </button>
+      <button class="header__burger--close block js-close-menu" type="button">
+                <svg class="icon__burger--close" width="28px" height="28px">
+              <use href="./images/sprite.svg#icon-x-close"></use>
+            </svg>
+            </button>
     </nav>
   </div>
 </header>
 
 <div class="mobile-menu js-menu-container">
   <div class="container">
-    <!-- <button class="mobile-menu__close js-close-menu" type="button">
-                <svg class="button--close" width="28px" height="28px">
-              <use href="./images/sprite.svg#icon-x-close"></use>
-            </svg>
-            </button> -->
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li>
+    
+    <ul class="mobile-menu--list">
+      <li class="mobile-menu--home current"><a href="./index.html">Home</a></li>
+      <li class="mobile-menu--shoping">
         <a href="#">Shopping list </a>
-        <svg width="20px" height="20px">
+        <svg class="mobile-menu--icon" width="20px" height="20px">
           <use href="./images/sprite.svg#icon-uil_cart"></use>
         </svg>
       </li>

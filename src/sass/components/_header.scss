@@ -1,16 +1,4 @@
-a {
-    text-decoration: none;
-}
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    padding: 0;
-}
 
 .header {
     z-index: 100;
@@ -26,7 +14,7 @@ li {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     padding-top: 18px;
     padding-bottom: 18px;
@@ -35,6 +23,7 @@ li {
     @media (min-width: 768px) {
         padding-top: 13px;
         padding-bottom: 14px;
+        justify-content: space-between;
     }
 
     @media (min-width:1440px) {
@@ -69,7 +58,10 @@ li {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-
+@media screen and (min-width: $tablet) {
+        display:block;
+        display: flex;
+    }
     &.show {
         display: flex;
     }
@@ -79,14 +71,18 @@ li {
     }
 }
 
+.header__content{
+    display: flex;
+    align-items: center;
+}
 
-.header__burger {
+.header__burger--open {
     display: block;
 
 }
 
 @media (min-width: 768px) {
-    .header__burger {
+    .header__burger--open {
         display: none;
     }
 
@@ -99,11 +95,23 @@ li {
     }
 }
 
-.button--burger {
+.icon__burger--open,
+.icon__burger--close{
     stroke: $primary-text-color;
 }
+.header__burger--open,
+.header__burger--close{
+    background-color: $bg-color-header;
+    border:transparent;
+}
 
-.button--burger:hover {
+
+
+.block{
+    display: none;
+}
+
+.icon__burger--icon:hover {
     stroke: $accent-text-color;
 }
 
@@ -289,4 +297,14 @@ li {
 
 .dark__text {
     color: $bg-color-header;
+}
+
+
+
+.icon-black{
+    stroke: $bg-color-header;
+    fill:  $bg-color-header;
+}
+.button-black{
+background-color: #111111;
 }
