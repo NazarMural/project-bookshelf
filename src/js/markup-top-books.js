@@ -1,7 +1,7 @@
 import { fetchSearchResult } from './fetch-search-result';
 import { fetchCategoryList } from './fetch-category';
 import { createMarkupBooks } from './book-category';
-
+import { addHeading } from './book-category';
 const refs = {
   booksCardsList: document.querySelector('.books-cards__list'),
   booksCardsTitle: document.querySelector('.books-cards__title'),
@@ -22,7 +22,7 @@ export function allCategoryMarkup() {
       refs.booksCardsList.classList.add('top-books-list');
 
       refs.booksCardsList.innerHTML = '';
-      refs.booksCardsTitle.textContent = 'Best Sellers Books';
+      addHeading('Best Sellers Books');
 
       createCategoriesTopBooksMarkup(categoriesTopBooks);
 
@@ -45,12 +45,17 @@ function createTopBooksMarkup(categoriesTopBooks) {
 
   refs.topBooksCategories.forEach(element => {
     const markup = categoriesTopBooks[numberCategories].books
-      .map(({ book_image, title, author }) => {
+      .map(({ _id, book_image, title, author }) => {
         return `
-          <li class="top-books-categories__item">
-          <img class="top-books-categories__img" src="${book_image}" alt="${title}">
-          <h2 class="top-books-categories__title">${title}</h2>
-          <p class="top-books-categories__author">${author}</p>
+          <li data-id="${_id}" class="category-books__item">
+          <a href="" class="category-books__link">
+          <div class="category-books__img-thumb">
+          <img src="${book_image}" alt="${title}" class="category-books__img">
+          <p class="card-overlay">Quick view</p>
+          </div>
+          <h2 class="category-books__title">${title}</h2>
+          <p class="category-books__author">${author}</p>
+          </a>
           </li>`;
       })
       .join('');

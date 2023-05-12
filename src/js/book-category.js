@@ -13,7 +13,6 @@ async function onClickCategory(evt) {
   if (evt.target.classList.contains('category__link-all')) {
     removeMarkup();
     evt.target.classList.add('current-category');
-    addHeading('Best Sellers Books');
     allCategoryMarkup();
   }
   if (evt.target.classList.contains('category__link')) {
@@ -73,3 +72,4 @@ function createMarkupBooks(category) {
 }
 
 export { createMarkupBooks };
+export { addHeading };
