@@ -9,3 +9,4 @@ import './js/switch';
 import './js/mobile';
 //import './js/shoppingList';
 
+import './js/loader';
