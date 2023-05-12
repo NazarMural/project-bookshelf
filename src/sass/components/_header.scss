@@ -33,35 +33,20 @@
 
 }
 
-.container__header {
 
-    min-width: $mobile;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-
-    @media screen and (min-width: $tablet) {
-        min-width: $tablet;
-        padding: 0 32px;
-    }
-
-    @media screen and (min-width: $desktop) {
-        min-width: $desktop;
-        padding: 0 24px;
-    }
-
+.header__container{
+    display:flex;
 }
-
 .list__nav {
-
+    display: flex;
     display: none;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-@media screen and (min-width: $tablet) {
-        display:block;
-        display: flex;
-    }
+// @media screen and (min-width: $tablet) {
+//         display:block;
+//         display: flex;
+//     }
     &.show {
         display: flex;
     }
@@ -107,6 +92,7 @@
 .header__burger--close{
     background-color: $bg-color-header;
     border:transparent;
+   
 }
 
 
