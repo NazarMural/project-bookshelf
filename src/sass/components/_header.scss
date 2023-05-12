@@ -3,7 +3,7 @@
 .header {
     z-index: 100;
     position: fixed;
-    display: flex;
+    // display: flex;
     width: 100%;
     background: $bg-color-header;
     border: 1.5px solid #111;
@@ -59,6 +59,14 @@
 .header__content{
     display: flex;
     align-items: center;
+      @media (min-width: 768px) {
+       margin-left: 299px;
+
+}
+@media (min-width: 1440px) {
+       margin-left: 212px;
+
+}
 }
 
 .header__burger--open {
