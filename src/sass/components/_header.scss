@@ -101,7 +101,7 @@
 .icon__burger--close{
     stroke: $primary-text-color;
      @media (min-width: 768px) {
-        display: block;
+        display: none;
     }
     
 }
