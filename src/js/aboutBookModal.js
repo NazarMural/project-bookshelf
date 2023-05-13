@@ -29,15 +29,13 @@ async function openModal(e) {
     const bookItem = e.target.closest('.category-books__item');
     const bookId = bookItem.dataset.id;
     backdrop.classList.remove('backdrop--hidden');
+
     const bookMarkup = await fetchSearchResult(bookId);
     bookContainer.insertAdjacentHTML('beforeend', createBookMarup(bookMarkup));
+
     const varGetBook = await getBook();
-    console.log(varGetBook);
     if (varGetBook !== null) {
       for (let i = 0; i < varGetBook.length; i++) {
-        console.log(varGetBook[i]._id);
-        console.log(bookId);
-
         if (varGetBook[i]._id === bookId) {
           buttonState = false;
           break;
