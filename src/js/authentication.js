@@ -51,6 +51,7 @@ mobileEnter.addEventListener('click', openSignUpFunc);
 
 const logout = document.querySelector('[logOut]');
 const log = document.querySelector('.log');
+const iconShow=document.querySelector('.show__icon')
 
 log.addEventListener('click', signOutLog);
 logout.addEventListener('click', signOutLog);
@@ -110,14 +111,15 @@ function loginFunc(verified) {
 
     menuHeader.classList.add('show');
     logout.classList.add('show');
-    log.classList.add('show')
+    log.classList.add('show');
     openSignUp.classList.remove('show');
     menuHeader.closest('.header__box').classList.add('autorizationstyle');
     mobileOut.classList.add('show');
     mobileMenu.classList.add('show');
     mobileEnter.classList.remove('show');
-    userName.classList.add('show')
-    mobileConteiner.classList.add('show')
+    userName.classList.add('show');
+    mobileConteiner.classList.add('show');
+    iconShow.classList.add('show');
     if (localStorage.getItem('user-name')) {
       userName.textContent = localStorage.getItem('user-name')
       logout.textContent=localStorage.getItem('user-name')
@@ -141,8 +143,9 @@ function loginFunc(verified) {
     mobileOut.classList.remove('show');
     mobileMenu.classList.remove('show');
     mobileEnter.classList.add('show');
-    mobileConteiner.classList.remove('show')
-    userName.classList.remove('show')
+    mobileConteiner.classList.remove('show');
+    userName.classList.remove('show');
+    iconShow.classList.remove('show');
     modalBookBtnSignUp.classList.remove('is-hidden');
     modalBookBtn.classList.add('is-hidden');
   }

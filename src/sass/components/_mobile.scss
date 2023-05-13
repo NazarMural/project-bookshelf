@@ -116,28 +116,11 @@ fill: $bg-color-header;
    background: #FFFFFF;
    border: 1.5px solid #111111;
    border-radius: 18px;
-//    background-image: url('/src/images/user.svg');
-//    background-repeat: no-repeat;
-//    background-size: contain;
-//    position: relative;
+
   
    }
 }
 
-// .mobile-menu--log-out::before{
-   
-//     &.show{
-//         content:'';
-//     display:inline-block;
-//     width: 37px;
-//     height: 37px;
-//     background-image: url('/src/images/user.svg');
-//     background-repeat: no-repeat;
-//     background-size: contain;
-//     position: absolute;
-//     }
-    
-// }
 
 
 .mobile-menu--images{
@@ -147,6 +130,27 @@ fill: $bg-color-header;
     z-index: -1;
 }
 
+.show__icon{
+    display: none;
+    &.show {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 126px;
+        width: 133px;
+        height: 37px;
+        background: transparent;
+        border: 1.5px solid transparent;
+        border-radius: 18px;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 1.32;
+        letter-spacing: -0.02em;
+        color: $bg-color-header;
+        
+        }
+}
+
 .mobile-menu__user_name{
     display: none;
     
@@ -154,7 +158,7 @@ fill: $bg-color-header;
              display: flex;
         align-items: center;
         justify-content: space-around;
-       margin-bottom: 126px;
+       
         width: 133px;
         height: 37px;
         background: transparent;
@@ -169,6 +173,7 @@ fill: $bg-color-header;
         }
        
 }
+
 
 .mobile-menu__container{
     &.show{ 
