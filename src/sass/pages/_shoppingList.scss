@@ -13,6 +13,20 @@
       line-height: 1.08;
     }
   }
+  &__titleMarkup {
+    font-family: 'DM Sans';
+    color: $primary-text-color;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+    margin: 0;
+    margin-bottom: 40px;
+    @media screen and (min-width: $tablet) {
+      font-size: 48px;
+      line-height: 1.08;
+    }
+  }
   &__img {
     width: 265px;
     @media screen and (min-width: $tablet) {
@@ -51,4 +65,141 @@
       width: 349px;
     }
   }
+  // &__founds {
+  //   display: none;
+  //   @media screen and (min-width: $tablet) {
+  //     display: flex;
+  //   }
+  // }
+}
+
+.shopCard {
+  width: 335px;
+
+  &__photo {
+    margin: 0;
+    object-fit: cover;
+    display: block;
+    height: 100%;
+  }
+  &__btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: $secondary-accent-color;
+    border: transparent;
+  }
+  &__title {
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    color: $primary-text-color;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 144px;
+    margin-bottom: 4px;
+  }
+  &__list-name {
+    font-family: 'DM Sans';
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    color: $tertiary-text-color-darkt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    margin-bottom: 8px;
+  }
+  &__description {
+    font-family: 'DM Sans';
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+
+    letter-spacing: -0.04em;
+
+    color: $primary-text-color;
+
+    width: 193px;
+  }
+  &__author {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.15;
+
+    letter-spacing: -0.04em;
+
+    color: $tertiary-text-color-darkt;
+  }
+  &__url {
+    width: 16px;
+    height: 16px;
+    &:hover,
+    &:focus {
+      filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+    }
+  }
+  &__url-amazon {
+    width: 32px;
+    height: 11px;
+  }
+  &__card-container {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+    padding: 14px;
+    height: 170px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  &__description-container {
+    width: 193px;
+  }
+  &__photo-container {
+    width: 100px;
+    height: 100%;
+    margin-right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__info-block {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__urlList {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  &__boxAutor {
+    display: flex;
+
+    justify-content: space-between;
+  }
+  &__box-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.block-with-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+}
+
+.block-with-ellipsis::after {
+  content: '...';
 }

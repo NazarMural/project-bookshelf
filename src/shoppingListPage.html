@@ -7,13 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shoping list</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./shopingListPage.js"></script>
   </head>
 
   <body>
+    <include src="./partials/header.html"></include>
     <main class="shopList__main">
-      <!-- <include src="./partials/shoppingList.html"></include> -->
-      <include src="./shoppingList.html"></include>
+      <div class="container">
+        <div class="main-container">
+          <div class="shopList__container">
+            <div class="shopList__fonds">
+              <!--  <include src="./partials/support.html"></include>-->
+            </div>
+            <div class="shopList__list">
+              <ul class="shopList__ul"></ul>
+              <!-- <include src="./partials/shoppingList.html"></include> -->
+              <include src="./partials/authentication.html"></include>
+              <!-- <include src="./shoppingList.html"></include>  -->
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
