@@ -50,6 +50,9 @@ const mobileConteiner =document.querySelector('.mobile-menu__container')
 mobileEnter.addEventListener('click', openSignUpFunc);
 
 const logout = document.querySelector('[logOut]');
+const log = document.querySelector('.log');
+
+log.addEventListener('click', signOutLog);
 logout.addEventListener('click', signOutLog);
 mobileOut.addEventListener('click', signOutLog);
 
@@ -107,6 +110,7 @@ function loginFunc(verified) {
 
     menuHeader.classList.add('show');
     logout.classList.add('show');
+    log.classList.add('show')
     openSignUp.classList.remove('show');
     menuHeader.closest('.header__box').classList.add('autorizationstyle');
     mobileOut.classList.add('show');
@@ -131,6 +135,7 @@ function loginFunc(verified) {
     //ДОБАВИть Функцию которая рендерит Хедер НЕ для регистрационных
     menuHeader.classList.remove('show');
     logout.classList.remove('show');
+    log.classList.remove('show');
     openSignUp.classList.add('show');
     menuHeader.closest('.header__box').classList.remove('autorizationstyle');
     mobileOut.classList.remove('show');
