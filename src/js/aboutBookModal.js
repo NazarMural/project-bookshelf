@@ -93,11 +93,11 @@ function createBookMarup({
   description,
   author,
 }) {
-  const markup = `<img src="${book_image}" alt="${title}" />
-  <h2>${title}</h2>
-  <p>${author}</p>
-  <p>${description}</p>
-  <svg width="10" height="10"><use href="${buy_links}"></use></svg>`;
+  const markup = `<img src="${book_image}" alt="${title}"  class="book-cover"/>
+  <div class="text-container"><h2 class="book-cover__title">${title}</h2>
+  <p class="book-cover__author">${author}</p>
+  <p class="book-description">${description}</p>
+  <svg width="10" height="10"><use href=""></use></svg></div>`;
 
   modalBtn.dataset.id = `${_id}`;
   return markup;
