@@ -12,6 +12,7 @@ const btnClose = document.querySelector('.close-btn');
 const bookContainer = document.querySelector('.book-container');
 const modalBtn = document.querySelector('.modal__btn');
 const modalBookBtnSignUp = document.querySelector('.modal-book-btn__signUp');
+const underRemoveBtn = document.querySelector('.information-about-status');
 
 booksCardsList.addEventListener('click', openModal);
 modalBookBtnSignUp.addEventListener('click', openSignUpFunc);
@@ -31,6 +32,7 @@ async function openModal(e) {
     backdrop.classList.remove('backdrop--hidden');
 
     const bookMarkup = await fetchSearchResult(bookId);
+    console.log(bookMarkup);
     bookContainer.insertAdjacentHTML('beforeend', createBookMarup(bookMarkup));
 
     const varGetBook = await getBook();
@@ -44,9 +46,11 @@ async function openModal(e) {
     }
     if (buttonState) {
       modalBtn.textContent = 'Add to shopping list';
+      underRemoveBtn.classList.add('is-hidden');
       // Тут має додаватися клас іс хіден
     } else {
       modalBtn.textContent = 'Remove from the shopping list';
+      underRemoveBtn.classList.remove('is-hidden');
       // Тут має забиратися клас іс хіден
     }
   }
@@ -72,10 +76,12 @@ async function addAndRemoveButton(e) {
   if (buttonState) {
     postBook(bookMarkup);
     modalBtn.textContent = 'Remove from the shopping list';
+    underRemoveBtn.classList.remove('is-hidden');
     // Тут має забиратися клас іс хіден
   } else {
     deleteBook(bookId);
     modalBtn.textContent = 'Add to shopping list';
+    underRemoveBtn.classList.add('is-hidden');
     // Тут має додаватися клас іс хіден
   }
 }
@@ -96,8 +102,8 @@ function createBookMarup({
   const markup = `<img src="${book_image}" alt="${title}"  class="book-cover"/>
   <div class="text-container"><h2 class="book-cover__title">${title}</h2>
   <p class="book-cover__author">${author}</p>
-  <p class="book-description">${description}</p>
-  <svg width="10" height="10"><use href=""></use></svg></div>`;
+  <p class="book-cover__description">${description}</p>
+  </div>`;
 
   modalBtn.dataset.id = `${_id}`;
   return markup;

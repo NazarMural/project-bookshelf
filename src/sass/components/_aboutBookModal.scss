@@ -36,10 +36,22 @@
   }
 }
 
+.store-icons {
+  display: flex;
+}
+
+.store-icon {
+  width: 36px;
+  height: 40px;
+}
+
 .close-btn {
   position: absolute;
   right: 15px;
   top: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .close-icon {
@@ -49,9 +61,7 @@
 .modal__btn {
   display: flex;
   justify-content: center;
-
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   min-width: 211px;
   max-height: 46px;
   border: solid 2px #4f2ee8;
@@ -63,9 +73,13 @@
   font-family: DM Sans;
   line-height: 1.28;
   letter-spacing: -0.01em;
+  cursor: pointer;
   @media screen and (min-width: 768px) {
     min-width: 499px;
     min-height: 64px;
+    padding: 20px 150px;
+    font-size: 18px;
+    line-height: 1.33;
   }
 }
 
@@ -73,6 +87,17 @@
   display: none;
 }
 
+.information-about-status {
+  font-family: DM Sans;
+  padding-right: 46px;
+  padding-left: 47px;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  color: rgba(17, 17, 17, 0.5);
+}
 .book-container {
   padding-top: 40px;
   padding-left: 24px;
@@ -96,6 +121,7 @@
   @media screen and (min-width: 768px) {
     width: 192px;
     height: 281px;
+    margin-right: 24px;
   }
 }
 
@@ -103,10 +129,50 @@
   font-family: 'DM Sans';
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.12px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: #111111;
+  margin-bottom: 4px;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 1.16;
+  }
+}
+
+.book-cover__author {
+  font-family: 'DM Sans';
+  font-size: 12px;
+  line-height: 1.16;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+  margin-bottom: 18px;
+}
+
+.book-cover__description {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.12;
   letter-spacing: -0.04em;
   color: #111111;
 }
+.content {
+  padding-bottom: 40px;
+}
 
-// .book-cover__author {
-// }
+.modal-book-btn__signUp {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 35px;
+  background-color: #4f2ee8;
+  border: solid 1px #4f2ee8;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
