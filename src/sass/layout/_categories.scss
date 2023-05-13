@@ -41,19 +41,25 @@
 }
 
 .category-books-list {
+
     @media screen and (min-width: 768px) {
         display: flex;
         flex-wrap: wrap;
-        gap: 40px 24px;
+        gap: 40px 25px;
         margin-top: 40px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        column-gap: 24px;
     }
 }
 
 .category-books__item {
     width: 100%;
+    margin-bottom: 40px;
 
     @media screen and (min-width: 768px) {
-        width: calc((100% - 4*24px)/3);
+        width: calc((100% - 2*25px)/3);
     }
 
     @media screen and (min-width: 1440px) {
@@ -84,6 +90,10 @@
     display: block;
     z-index: -1;
 
+    @media screen and (min-width: 768px) {
+        min-width: 216px;
+        min-height: 318px;
+    }
 
     @media screen and (min-width: 1440px) {
         min-width: 180px;
