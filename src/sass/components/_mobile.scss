@@ -116,8 +116,29 @@ fill: $bg-color-header;
    background: #FFFFFF;
    border: 1.5px solid #111111;
    border-radius: 18px;
+//    background-image: url('/src/images/user.svg');
+//    background-repeat: no-repeat;
+//    background-size: contain;
+//    position: relative;
+  
    }
 }
+
+// .mobile-menu--log-out::before{
+   
+//     &.show{
+//         content:'';
+//     display:inline-block;
+//     width: 37px;
+//     height: 37px;
+//     background-image: url('/src/images/user.svg');
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     position: absolute;
+//     }
+    
+// }
+
 
 .mobile-menu--images{
     top: 30%;
