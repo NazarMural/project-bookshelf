@@ -28,6 +28,7 @@
   max-width: 335px;
   border: solid 2px #111111;
   border-radius: 10px;
+  overflow: auto;
   @media screen and (min-width: 768px) {
     max-width: 579px;
     // max-height: 465px;
@@ -66,7 +67,6 @@
   max-height: 46px;
   border: solid 2px #4f2ee8;
   border-radius: 40px;
-  padding: 14px 28px 14px 28px;
   background-color: transparent;
   text-transform: uppercase;
   font-weight: 700;
@@ -74,10 +74,13 @@
   line-height: 1.28;
   letter-spacing: -0.01em;
   cursor: pointer;
+  @media screen and (max-width: 767px) {
+    padding: 14px 28px;
+  }
   @media screen and (min-width: 768px) {
     min-width: 499px;
     min-height: 64px;
-    padding: 20px 150px;
+    padding: 20px 135px;
     font-size: 18px;
     line-height: 1.33;
   }

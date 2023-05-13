@@ -26,6 +26,9 @@ async function openModal(e) {
     e.target.nodeName === 'H2' ||
     e.target.nodeName === 'A'
   ) {
+    bookContainer.innerHTML = '';
+    // backdrop.style.zIndex = 0;
+
     btnClose.addEventListener('click', onClosebtn);
     const bookItem = e.target.closest('.category-books__item');
     const bookId = bookItem.dataset.id;
@@ -107,4 +110,19 @@ function createBookMarup({
 
   modalBtn.dataset.id = `${_id}`;
   return markup;
+}
+
+backdrop.addEventListener('click', onBackdropClick);
+window.addEventListener('keydown', onKeyDown);
+
+function onBackdropClick(e) {
+  if (e.target.classList.contains('backdrop')) {
+    backdrop.classList.add('backdrop--hidden');
+  }
+}
+
+function onKeyDown({ code }) {
+  if (code === 'Escape') {
+    backdrop.classList.add('backdrop--hidden');
+  }
 }
