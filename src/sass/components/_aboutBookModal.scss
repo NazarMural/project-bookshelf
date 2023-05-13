@@ -75,12 +75,12 @@
   letter-spacing: -0.01em;
   cursor: pointer;
   @media screen and (max-width: 767px) {
-    padding: 14px 28px;
+    padding: 14px 0;
   }
   @media screen and (min-width: 768px) {
     min-width: 499px;
     min-height: 64px;
-    padding: 20px 135px;
+    padding: 20px 0;
     font-size: 18px;
     line-height: 1.33;
   }

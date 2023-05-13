@@ -36,7 +36,7 @@ async function openModal(e) {
 
     const bookMarkup = await fetchSearchResult(bookId);
     console.log(bookMarkup);
-    bookContainer.insertAdjacentHTML('beforeend', createBookMarup(bookMarkup));
+    bookContainer.insertAdjacentHTML('afterbegin', createBookMarup(bookMarkup));
 
     const varGetBook = await getBook();
     if (varGetBook !== null) {
