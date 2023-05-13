@@ -79,5 +79,5 @@ function createMarkupBooks(category) {
   bookSection.insertAdjacentHTML('beforeend', markup);
 }
 
-export { createMarkupBooks };
-export { addHeading };
+// console.log(listCategory.childNodes());
+export { createMarkupBooks, addHeading };

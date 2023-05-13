@@ -4,6 +4,7 @@ import { createMarkupBooks } from './book-category';
 import { addHeading } from './book-category';
 import { loader, loadRemove } from './loader';
 import { scrollUp } from './button-up';
+import { changeCurrentCategory } from './change-current-category';
 
 const refs = {
   booksCardsList: document.querySelector('.books-cards__list'),
@@ -102,6 +103,7 @@ async function onClickSeeMore(evt) {
   console.log(category);
   refs.booksCardsTitle = document.querySelector('.books-cards__title');
   refs.booksCardsTitle.remove();
+  changeCurrentCategory(category);
   addHeading(category);
   refs.booksCardsList.innerHTML = '';
   loader();
