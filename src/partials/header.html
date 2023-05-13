@@ -27,7 +27,7 @@
         </li>
       </ul>
 <div class="header__content">
-<input class="switch" type="checkbox" id="toggle" />
+  <input class="switch" type="checkbox" id="toggle" />
 
       <a class="header__singin--link" href="#" openSignUp
         >Sign up
@@ -35,11 +35,15 @@
           <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
         </svg>
       </a>
-<button class="log-out" type="button" logOut>Log out
-  <svg width="20px" height="20px"> 
-          <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
-        </svg>
-</button>
+      <div class="log" > 
+        <svg width="37px" height="37px"> 
+        <use href="./images/sprite.svg#icon-user"></use></svg>
+         <button class="log-out" type="button" logOut>Log out</button>
+          <!-- <button class="log-out" type="button" logOut>Log out</button> -->
+          <svg width="23px" height="26px"> 
+          <use href="./images/sprite.svg#icon-caret-down"></use>
+         </svg>
+      
  
 </div>
       
@@ -63,14 +67,24 @@
 
   
 <div class="mobile-menu js-menu-container">
-  <div class="mobile-menu__container">
-    <a class="mobile-menu__singin--link" href="#" openSignUp
-        >Sign up
+  
+  <div class="mobile-menu__container"> 
+    <a class="mobile-menu__singin--link" href="#">
+      Sign up
         <svg width="20px" height="20px">
           <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
         </svg>
-      </a>
-    <ul class="mobile-menu--list">
+      </a> 
+<div class="show__icon">
+  <svg width="37px" height="37px"> 
+          <use href="./images/sprite.svg#icon-user"></use>
+         </svg>
+         <a class="mobile-menu__user_name" href="#" openSignUp
+        >User Name</a>
+</div>
+      
+
+    <ul class="mobile-menu--list js-mobile__nav">
       <li class="mobile-menu--home current"><a href="./index.html">Home</a></li>
       <li class="mobile-menu--shoping">
         <a href="./shoppingListPage.html">Shopping list </a>
@@ -79,10 +93,16 @@
         </svg>
       </li>
     </ul>
-    <button class="mobile-menu--log-out" type="button" logOut>Log out
+    <button class="mobile-menu--log-out" type="button">
+      Log out
   <svg width="20px" height="20px"> 
           <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
         </svg>
 </button>
-  </div>
-</div> 
+  
+  </div>  
+  <img class="mobile-menu--images" 
+  srcset="./images/booksgr@2x.png"
+  src="./images/booksgr.png" alt="books"> 
+ 
+</div>
