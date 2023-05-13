@@ -101,7 +101,7 @@
 .icon__burger--close{
     stroke: $primary-text-color;
      @media (min-width: 768px) {
-        display: block;
+        display: none;
     }
     
 }
@@ -109,7 +109,8 @@
 .header__burger--close{
     background-color: $bg-color-header;
     border:transparent;
-  
+  @media (min-width: 768px) {
+            display: none;}
     
 
     
@@ -147,13 +148,13 @@
     }
 }
 
-.log-out {
-    display: none;
+// .log-out {
+//     display: none;
 
-    &.show {
-        display: flex;
-    }
-}
+//     &.show {
+//         display: flex;
+//     }
+// }
 
 .header__link--home {
     display: none;
@@ -187,7 +188,7 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        gap: 4px;
+        // gap: 4px;
     }
 
     @media (min-width:1440px) {
@@ -238,9 +239,14 @@
         }
     }
 }
+.log {
+    display: none;
 
-
-.log-out{
+    &.show {
+        display: flex;
+    }
+}
+.log{
     &.show{
 
         display: none;
@@ -262,6 +268,36 @@
         }
     }
 }
+.log-out{
+    background: transparent;
+    border: transparent;
+    letter-spacing: -0.04em;
+    color:$bg-color-header;
+}
+
+
+// .log-out{
+//     &.show{
+
+//         display: none;
+//         // display: flex;
+//         align-items: center;
+//         justify-content: space-around;
+//         /* padding-left: 14px; */
+//         width: 184px;
+//         height: 45px;
+//         background: $accent-text-color;
+//         border: 1.5px solid $bg-color-header;
+//         border-radius: 18px;
+//         letter-spacing: -0.04em;
+//         color: $bg-color-header;
+
+//         &.show {
+//  @media (min-width: 768px) {
+//             display: flex;}
+//         }
+//     }
+// }
 
 
 #toggle {
@@ -343,3 +379,4 @@
 .button-black{
 background-color: #111111;
 }
+
