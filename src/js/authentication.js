@@ -40,8 +40,15 @@ const menuHeader = document.querySelector('.js-list__nav');
 const openSignUp = document.querySelector('[openSignUp]');
 openSignUp.addEventListener('click', openSignUpFunc);
 
+const mobileOut = document.querySelector('.mobile-menu--log-out');
+const mobileMenu = document.querySelector('.js-mobile__nav');
+const mobileEnter = document.querySelector('.mobile-menu__singin--link')
+const userName=document.querySelector('.mobile-menu__user_name')
+mobileEnter.addEventListener('click', openSignUpFunc);
+
 const logout = document.querySelector('[logOut]');
 logout.addEventListener('click', signOutLog);
+mobileOut.addEventListener('click', signOutLog);
 
 const timer = {
   timeout: 5000,
@@ -57,9 +64,11 @@ onAuthStateChanged(auth, user => {
     localStorage.setItem('uid', userId);
     console.log('User signed in:', user);
     loginFunc(user.emailVerified);
+
+
   } else {
     localStorage.removeItem('uid');
-    localStorage.removeItem('user-name');
+    // localStorage.removeItem('user-name');
     LOGIN = false;
     loginFunc(null);
     console.log('User signed out');
@@ -80,7 +89,7 @@ function signOutLog() {
   signOut(auth)
     .then(() => {
       localStorage.removeItem('uid');
-      localStorage.removeItem('user-name');
+      // localStorage.removeItem('user-name');
       LOGIN = false;
     })
     .catch(error => {});
@@ -97,6 +106,16 @@ function loginFunc(verified) {
     logout.classList.add('show');
     openSignUp.classList.remove('show');
     menuHeader.closest('.header__box').classList.add('autorizationstyle');
+    mobileOut.classList.add('show');
+    mobileMenu.classList.add('show');
+    mobileEnter.classList.remove('show');
+    userName.classList.add('show')
+    if (localStorage.getItem('user-name')) {
+      userName.textContent=localStorage.getItem('user-name')
+    }
+    else {
+      userName.textContent='USER'
+    }
 
     //ДОБАВИть Функцию которая рендерит Хедер для пользователя регистрационных
   } else {
@@ -106,6 +125,10 @@ function loginFunc(verified) {
     logout.classList.remove('show');
     openSignUp.classList.add('show');
     menuHeader.closest('.header__box').classList.remove('autorizationstyle');
+    mobileOut.classList.remove('show');
+    mobileMenu.classList.remove('show');
+    mobileEnter.classList.add('show');
+    userName.classList.remove('show')
   }
 }
 
