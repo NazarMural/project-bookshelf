@@ -1,6 +1,6 @@
 .mobile-menu{
     z-index: 2;
-    display: none;
+    // display: none;
     position:fixed ;
     top:0;
     left:0;
@@ -9,13 +9,13 @@
     padding: 104px 171px 660px 20px;
 
     background-image: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
-    
-    
+    transform: translateX(100%);
+     transition: transform 250ms ease-in-out;
     
 }
 .mobile-menu.is-open{
-    transform: translateY(0);
-    display: block;
+    // display: block;
+    transform: translateX(0);
     // transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     @media (min-width: 768px) {
             display: none;}
@@ -146,4 +146,13 @@ fill: $bg-color-header;
         margin-bottom: 126px;
         }
        
+}
+
+.mobile-menu__container{
+    width: 100%;
+    height: 100%;
+}
+
+.stop{
+    
 }
