@@ -38,6 +38,8 @@ let LOGIN = false;
 
 const menuHeader = document.querySelector('.js-list__nav');
 const openSignUp = document.querySelector('[openSignUp]');
+const modalBookBtn = document.querySelector('.modal__btn');
+const modalBookBtnSignUp = document.querySelector('.modal-book-btn__signUp');
 openSignUp.addEventListener('click', openSignUpFunc);
 
 const mobileOut = document.querySelector('.mobile-menu--log-out');
@@ -116,6 +118,8 @@ function loginFunc(verified) {
     else {
       userName.textContent='USER'
     }
+    modalBookBtnSignUp.classList.add('is-hidden');
+    modalBookBtn.classList.remove('is-hidden');
 
     //ДОБАВИть Функцию которая рендерит Хедер для пользователя регистрационных
   } else {
@@ -129,6 +133,8 @@ function loginFunc(verified) {
     mobileMenu.classList.remove('show');
     mobileEnter.classList.add('show');
     userName.classList.remove('show')
+    modalBookBtnSignUp.classList.remove('is-hidden');
+    modalBookBtn.classList.add('is-hidden');
   }
 }
 
