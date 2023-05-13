@@ -2,6 +2,10 @@ import { fetchSearchResult } from './fetch-search-result';
 import { fetchCategoryList } from './fetch-category';
 import { createMarkupBooks } from './book-category';
 import { addHeading } from './book-category';
+import { loader, loadRemove } from './loader';
+import { scrollUp } from './button-up';
+import { changeCurrentCategory } from './change-current-category';
+
 const refs = {
   booksCardsList: document.querySelector('.books-cards__list'),
   booksCardsTitle: null,
@@ -14,6 +18,7 @@ refs.booksCardsList.addEventListener('click', onClickSeeMore);
 allCategoryMarkup();
 
 export function allCategoryMarkup() {
+  loader();
   fetchSearchResult('top-books')
     .then(categoriesTopBooks => {
       console.log(refs.booksCardsList);
@@ -32,6 +37,7 @@ export function allCategoryMarkup() {
       refs.booksCardsButton = document.querySelector('.top-books__button');
 
       createTopBooksMarkup(categoriesTopBooks);
+      loadRemove();
     })
     .catch(() => {
       console.log('Проблема з запитом!');
@@ -97,8 +103,12 @@ async function onClickSeeMore(evt) {
   console.log(category);
   refs.booksCardsTitle = document.querySelector('.books-cards__title');
   refs.booksCardsTitle.remove();
+  changeCurrentCategory(category);
   addHeading(category);
   refs.booksCardsList.innerHTML = '';
+  loader();
   const categoryItem = await fetchCategoryList(category);
+  loadRemove();
+  scrollUp();
   createMarkupBooks(categoryItem);
 }

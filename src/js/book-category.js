@@ -1,5 +1,6 @@
 import { fetchCategoryList } from './fetch-category';
 import { allCategoryMarkup } from './markup-top-books';
+import { loader, loadRemove } from './loader';
 
 const listCategory = document.querySelector('.list-categories');
 const bookSection = document.querySelector('.books-cards__list');
@@ -9,25 +10,32 @@ listCategory.addEventListener('click', onClickCategory);
 async function onClickCategory(evt) {
   bookSection.classList.remove('top-books-list');
   bookSection.classList.add('category-books-list');
+
   evt.preventDefault();
   if (evt.target.classList.contains('category__link-all')) {
+    // loader();
     removeMarkup();
     evt.target.classList.add('current-category');
     allCategoryMarkup();
   }
+
   if (evt.target.classList.contains('category__link')) {
+    loader();
     removeMarkup();
     const category = evt.target.textContent;
     evt.target.classList.add('current-category');
     addHeading(category);
     const categoryItem = await fetchCategoryList(category);
     createMarkupBooks(categoryItem);
+    loadRemove();
   }
 }
 
 function removeMarkup() {
   const sectionTitle = document.querySelector('.books-cards__title');
-  sectionTitle.remove();
+  if (sectionTitle) {
+    sectionTitle.remove();
+  }
   removeCurrentClass();
   bookSection.innerHTML = '';
 }
@@ -71,5 +79,5 @@ function createMarkupBooks(category) {
   bookSection.insertAdjacentHTML('beforeend', markup);
 }
 
-export { createMarkupBooks };
-export { addHeading };
+// console.log(listCategory.childNodes());
+export { createMarkupBooks, addHeading };

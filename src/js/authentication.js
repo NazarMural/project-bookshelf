@@ -38,6 +38,8 @@ let LOGIN = false;
 
 const menuHeader = document.querySelector('.js-list__nav');
 const openSignUp = document.querySelector('[openSignUp]');
+const modalBookBtn = document.querySelector('.modal__btn');
+const modalBookBtnSignUp = document.querySelector('.modal-book-btn__signUp');
 openSignUp.addEventListener('click', openSignUpFunc);
 
 const logout = document.querySelector('[logOut]');
@@ -96,6 +98,9 @@ function loginFunc(verified) {
     menuHeader.classList.add('show');
     logout.classList.add('show');
     openSignUp.classList.remove('show');
+    menuHeader.closest('.header__box').classList.add('autorizationstyle');
+    modalBookBtnSignUp.classList.add('is-hidden');
+    modalBookBtn.classList.remove('is-hidden');
 
     //ДОБАВИть Функцию которая рендерит Хедер для пользователя регистрационных
   } else {
@@ -104,6 +109,9 @@ function loginFunc(verified) {
     menuHeader.classList.remove('show');
     logout.classList.remove('show');
     openSignUp.classList.add('show');
+    menuHeader.closest('.header__box').classList.remove('autorizationstyle');
+    modalBookBtnSignUp.classList.remove('is-hidden');
+    modalBookBtn.classList.add('is-hidden');
   }
 }
 

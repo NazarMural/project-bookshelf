@@ -27,14 +27,6 @@
     }
 }
 
-
-
-// .dark-theme .category__link,
-// .dark-theme .category__link-all {
-//     color: $secondary-text-color-darkt;
-// }
-
-
 .current-category {
     font-weight: 700;
     font-size: 18px;
@@ -49,19 +41,25 @@
 }
 
 .category-books-list {
+
     @media screen and (min-width: 768px) {
         display: flex;
         flex-wrap: wrap;
-        gap: 40px 24px;
+        gap: 40px 25px;
         margin-top: 40px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        column-gap: 24px;
     }
 }
 
 .category-books__item {
     width: 100%;
+    margin-bottom: 40px;
 
     @media screen and (min-width: 768px) {
-        width: calc((100% - 4*24px)/3);
+        width: calc((100% - 2*25px)/3);
     }
 
     @media screen and (min-width: 1440px) {
@@ -72,13 +70,16 @@
 
 .category-books__img-thumb {
     aspect-ratio: 2/3;
-    //     /* flex-grow: 1; */
     object-fit: cover;
-    // overflow: hidden;
+    display: flex;
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 14px;
+    // border: 1px solid $secondary-text-color-darkt;
+    box-shadow: inset 6px 0 5px 5px #0005;
+    // box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1),
+    //     0px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 1px 1px -1px rgba(0, 0, 0, 0.1);
 }
 
 .category-books__img {
@@ -87,6 +88,12 @@
     overflow: hidden;
     border-radius: 8px;
     display: block;
+    z-index: -1;
+
+    @media screen and (min-width: 768px) {
+        min-width: 216px;
+        min-height: 318px;
+    }
 
     @media screen and (min-width: 1440px) {
         min-width: 180px;
@@ -106,9 +113,8 @@
     transform: translateY(30%);
     opacity: 0;
     background-color: $primary-accent-color;
-    // -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),-webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    // transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    // transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     padding: 26px 0;
@@ -126,11 +132,8 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 1.12;
-    /* identical to box height, or 112% */
-
     letter-spacing: -0.04em;
     margin-bottom: 4px;
-    // width : 250px; 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
