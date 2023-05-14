@@ -1,7 +1,5 @@
 import { postBook, deleteBook, getBook } from './authentication';
-const mainUl = document.querySelector('.shopList__ul');
-const markupContainer = document.querySelector('.shopList__list');
-
+import { addPagination } from './pagination';
 import photo1 from '../images/shopingListBg.png';
 import photo2 from '../images/shopingListBg@2x.png';
 import amazonLogo from '../images/amazonLogo.png';
@@ -9,6 +7,8 @@ import bookLogo from '../images/bookLogo.png';
 import bookShopLogo from '../images/bookShopLogo.png';
 import deleteButtonIcon from '../images/deleteButtonIcon.png';
 
+const mainUl = document.querySelector('.shopList__ul');
+const markupContainer = document.querySelector('.shopList__container');
 //create markup
 getDataForMarkup();
 
@@ -22,6 +22,8 @@ async function getDataForMarkup() {
   } else {
     mainUl.insertAdjacentHTML('beforeend', noDataImg);
   }
+
+  addPagination();
 }
 
 //remove book
@@ -52,7 +54,7 @@ function createShoppingListMarkup(data) {
           { name: name3, url: url3 },
         ],
       }) =>
-        `<li class="shopCard">
+        `<li class="shopCard is-hidden">
   <div class="shopCard__card-container">
     <div class="shopCard__photo-container">
       <img class="shopCard__photo" src="${book_image}" alt="${title}" />
