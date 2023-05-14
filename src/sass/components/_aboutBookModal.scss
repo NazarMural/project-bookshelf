@@ -1,3 +1,7 @@
+body.modal-open {
+  overflow: hidden;
+}
+
 .backdrop {
   position: fixed;
   z-index: 2;
@@ -22,7 +26,7 @@
   position: absolute;
   left: 50%;
   top: 450px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   background-color: #fff;
   width: 100%;
   max-width: 335px;
@@ -33,8 +37,15 @@
     max-width: 579px;
     // max-height: 465px;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
   }
+}
+.backdrop--hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.dark-theme {
+  color: $primary-text-color-darkt;
 }
 
 .store-icons {
@@ -50,6 +61,11 @@
 
 .store-icon {
   filter: grayscale(1);
+  transition: filter 250ms $cubic;
+}
+
+.store-icon:hover {
+  filter: drop-shadow(0 3px 3px #00000026);
 }
 
 .close-btn {
@@ -63,6 +79,13 @@
 
 .close-icon {
   fill: #111111;
+  transition: fill 250ms $cubic, width 250ms $cubic, height 250ms$cubic;
+}
+
+.close-icon:hover {
+  width: 18;
+  height: 18;
+  fill: $accent-text-color;
 }
 
 .modal__btn {
@@ -81,6 +104,7 @@
   line-height: 1.28;
   letter-spacing: -0.01em;
   cursor: pointer;
+  transition: color 250ms $cubic, background-color 250ms $cubic;
   @media screen and (max-width: 767px) {
     padding: 14px 0;
   }
@@ -91,6 +115,11 @@
     font-size: 18px;
     line-height: 1.33;
   }
+}
+
+.modal__btn:hover {
+  color: $primary-text-color-darkt;
+  background-color: $accent-text-color;
 }
 
 .hidden {
@@ -164,6 +193,7 @@
   line-height: 1.12;
   letter-spacing: -0.04em;
   color: #111111;
+  min-height: 50px;
 }
 .modal-content {
   padding: 40px 24px;
