@@ -1,11 +1,8 @@
 import { supportItems } from './support-items';
 import Swiper from 'swiper';
- // import Swiper from 'swiper';
-  // import Swiper from 'swiper/bundle';
- import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 
 const container = document.querySelector('.list-support');
-
 
 const markup = createSupport(supportItems);
 
@@ -31,51 +28,7 @@ function createSupport(items) {
     .join('');
 };
 
-const swiper = new Swiper('.swiper', {
-  direction: 'vertical',
-  breakpointsBase: container,
-  centeredSlidesBounds: true,
-    loop: true,
-   effect: 'flip',
-  cssMode: true,
-     slidesPerView: 4,
-  spaceBetween: 10,
-    breakpoints: {
-    320: {
-      slidesPerView: 4,
-      spaceBetween: 20
-    },
-    768: {
-      slidesPerView: 6,
-      spaceBetween: 20
-    },
-  },
-      navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-             pagination: {
-    el: '.swiper-pagination',
-    // type: 'bullets',
-  },
-  //      scrollbar: {
-  //   el: '.swiper-scrollbar',
-  //   draggable: true,
-  // },
- });
-
-//  swiper.enable();
-
-// function arrCopy(obj) {
-//   return JSON.parse(JSON.stringify(obj));
-// }
-// const arr3 = arrCopy(supportItems);
-
 function addEl(arr3) {
-  // for (let i = 0; i < arr3.length; i++ ) {
-  //   arr3[i].id2 = indexOff(arr3);
-  //   console.log(arr3[i].id2);
-  // }
   arr3[0].key = '01';
   arr3[1].key = '02';
   arr3[2].key = '03';
@@ -87,15 +40,51 @@ function addEl(arr3) {
   arr3[8].key = '09';
   return arr3;
 };
-// function supportItemsId(arr) {
-//   const copyArr = [...arr];
-//    const result = copyArr.map((el) => {
-//      el["id"] = "fond";
-//            return el;
-//         });
-//         return result;
-// }
-// supportItemsId(supportItems);
 
 addEl(supportItems);
-console.log(supportItems);
+
+function sliderSupport() {
+  const slider = document.querySelector('.support-container');
+  const arrowNext = slider.querySelector('.swiper-button-next');
+  const swiper = new Swiper(document.querySelector('.swiper'), {
+    direction: 'vertical',
+    // breakpointsBase: container,
+    centeredSlidesBounds: true,
+    loop: true,
+    // effect: 'flip',
+    cssMode: true,
+
+    simulateTouch: true,
+    touchRatio: 1,
+    touchAngle: 45,
+    grabCursor: true,
+
+    speed: 800,
+
+    slidesPerGroup: 1,
+    initialSlide: 0,
+
+    slidesPerView: 0,
+    spaceBetween: 10,
+
+    breakpoints: {
+      320: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 6,
+        spaceBetween: 20,
+      },
+      1440: {
+        slidesPerView: 6,
+        spaceBetween: 20,
+      }
+    },
+    navigation: {
+      nextEl: arrowNext,
+      // prevEl: '.swiper-button-prev',
+    },
+  });
+}
+window.addEventListener('load', sliderSupport, false);
