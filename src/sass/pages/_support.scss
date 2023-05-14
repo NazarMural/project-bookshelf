@@ -2,11 +2,12 @@
     width: 335px;
     height: 352px;
     margin-top: 10px;
+    border-radius: 18px;
 
   @media screen and (min-width: $tablet) {
       height: 472px;
     }
-      @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $desktop) {
       width: 356px;
       height: 490px;
     }
@@ -31,14 +32,18 @@
 
 .list-support {
   color:rgba(255, 255, 255, 1);
-      height: 200px;
 
+  @media screen and (max-width: $max-mobile) {
+      height: 200px;
+    }
 }
 .support__item {
   display: flex;
   gap: 14px;
   align-items: center;
   font-size: 14px;
+  height: 100%;
+  max-height: 32px;
 }
 
 .slider .swiper-button-next {
@@ -52,7 +57,7 @@
 
 .support-title {
     padding-top: 24px;
-  padding-bottom: 40px;
+    padding-bottom: 40px;
     display: flex;
     gap: 12px;
     font-weight: 700;
@@ -64,14 +69,34 @@
   }
 
  .support__image {
-// filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
-filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
-fill: inherit;
-color: inherit;
-opacity: 100%;
+    filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
+    // fill: inherit;
+    // color: inherit;
+    // opacity: 100%;
  }
 
  .swiper {
   width: 335px;
   height: 296px;
+  overflow: visible;
 }
+
+.support-button-next {
+  position: relative;
+  top: auto;
+  bottom: -30px;
+  left: 32%;
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+    @media screen and (max-width: $desktop) {
+      width: 38px;
+      height: 38px;
+        bottom: -10px;
+    }
+}
+
+.support-button-next::after {
+  content: "";
+} 

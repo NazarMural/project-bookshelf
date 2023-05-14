@@ -44,14 +44,14 @@ openSignUp.addEventListener('click', openSignUpFunc);
 
 const mobileOut = document.querySelector('.mobile-menu--log-out');
 const mobileMenu = document.querySelector('.js-mobile__nav');
-const mobileEnter = document.querySelector('.mobile-menu__singin--link')
-const userName = document.querySelector('.mobile-menu__user_name')
-const mobileConteiner =document.querySelector('.mobile-menu__container')
+const mobileEnter = document.querySelector('.mobile-menu__singin--link');
+const userName = document.querySelector('.mobile-menu__user_name');
+const mobileConteiner = document.querySelector('.mobile-menu__container');
 mobileEnter.addEventListener('click', openSignUpFunc);
 
 const logout = document.querySelector('[logOut]');
 const log = document.querySelector('.log');
-const iconShow=document.querySelector('.show__icon')
+const iconShow = document.querySelector('.show__icon');
 
 log.addEventListener('click', signOutLog);
 logout.addEventListener('click', signOutLog);
@@ -71,8 +71,6 @@ onAuthStateChanged(auth, user => {
     localStorage.setItem('uid', userId);
     console.log('User signed in:', user);
     loginFunc(user.emailVerified);
-
-
   } else {
     localStorage.removeItem('uid');
     // localStorage.removeItem('user-name');
@@ -114,6 +112,12 @@ function loginFunc(verified) {
     log.classList.add('show');
     openSignUp.classList.remove('show');
     menuHeader.closest('.header__box').classList.add('autorizationstyle');
+    if (modalBookBtnSignUp) {
+      modalBookBtnSignUp.classList.add('is-hidden');
+    }
+    if (modalBookBtn) {
+      modalBookBtn.classList.remove('is-hidden');
+    }
     mobileOut.classList.add('show');
     mobileMenu.classList.add('show');
     mobileEnter.classList.remove('show');
@@ -121,15 +125,18 @@ function loginFunc(verified) {
     mobileConteiner.classList.add('show');
     iconShow.classList.add('show');
     if (localStorage.getItem('user-name')) {
-      userName.textContent = localStorage.getItem('user-name')
-      logout.textContent=localStorage.getItem('user-name')
+      userName.textContent = localStorage.getItem('user-name');
+      logout.textContent = localStorage.getItem('user-name');
+    } else {
+      userName.textContent = 'USER';
+      logout.textContent = 'USER';
     }
-    else {
-      userName.textContent = 'USER'
-      logout.textContent='USER'
+    if (modalBookBtnSignUp) {
+      modalBookBtnSignUp.classList.add('is-hidden');
     }
-    modalBookBtnSignUp.classList.add('is-hidden');
-    modalBookBtn.classList.remove('is-hidden');
+    if (modalBookBtn) {
+      modalBookBtn.classList.remove('is-hidden');
+    }
 
     //ДОБАВИть Функцию которая рендерит Хедер для пользователя регистрационных
   } else {
@@ -140,6 +147,12 @@ function loginFunc(verified) {
     log.classList.remove('show');
     openSignUp.classList.add('show');
     menuHeader.closest('.header__box').classList.remove('autorizationstyle');
+    if (modalBookBtnSignUp) {
+      modalBookBtnSignUp.classList.remove('is-hidden');
+    }
+    if (modalBookBtn) {
+      modalBookBtn.classList.add('is-hidden');
+    }
     mobileOut.classList.remove('show');
     mobileMenu.classList.remove('show');
     mobileEnter.classList.add('show');
