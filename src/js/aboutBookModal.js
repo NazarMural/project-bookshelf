@@ -5,9 +5,9 @@ import {
   getBook,
   openSignUpFunc,
 } from './authentication';
-import iconAmazonUrl from '../images/amazon.png';
-import iconBooksUrl from '../images/books.png';
-import iconBookShopUrl from '../images/bookShop.png';
+import amazonLogo from '../images/amazonLogo.png';
+import bookLogo from '../images/bookLogo.png';
+import bookShopLogo from '../images/bookShopLogo.png';
 
 const booksCardsList = document.querySelector('.books-cards__list');
 const backdrop = document.querySelector('.backdrop');
@@ -16,7 +16,6 @@ const bookContainer = document.querySelector('.book-container');
 const modalBtn = document.querySelector('.modal__btn');
 const modalBookBtnSignUp = document.querySelector('.modal-book-btn__signUp');
 const underRemoveBtn = document.querySelector('.information-about-status');
-const storeIconsList = document.querySelector('.store-icons');
 
 booksCardsList.addEventListener('click', openModal);
 modalBookBtnSignUp.addEventListener('click', openSignUpFunc);
@@ -99,7 +98,11 @@ function onClosebtn() {
 function createBookMarup({
   _id,
   book_image,
-  buy_links,
+  buy_links: [
+    { name: name1, url: url1 },
+    { name: name2, url: url2 },
+    { name: name3, url: url3 },
+  ],
   title,
   description,
   author,
@@ -107,33 +110,34 @@ function createBookMarup({
   const markup = `<img src="${book_image}" alt="${title}"  class="book-cover"/>
   <div class="text-container"><h2 class="book-cover__title">${title}</h2>
   <p class="book-cover__author">${author}</p>
-  <p class="book-cover__description">${description}</p>
+  <p class="book-cover__description">${description || 'No description'}</p>
   <ul class="store-icons">
   <li class="store-icons__item">
-    <a href="${buy_links}"
+    <a href="${url1}"
       ><img
-        src="${iconAmazonUrl}"
-        alt="book store"
+        src="${amazonLogo}"
+        alt="${name1}"
         width="62"
         height="19"
         class="store-icon"
+        target="_blank" 
     /></a>
   </li>
   <li class="store-icons__item">
-    <a href="${buy_links}" target="_blank" rel="noreferrer noopener"
+    <a href="${url2}" target="_blank" 
       ><img
-        src="${iconBooksUrl}"
-        alt="book store"
+        src="${bookLogo}"
+        alt="${name2}"
         width="33"
         height="32"
         class="store-icon"
     /></a>
   </li>
   <li class="store-icons__item">
-    <a href="${filterlink(buy_links)}"
-      ><img
-        src="${iconBookShopUrl}"
-        alt="book store"
+    <a href="${url3}"
+    target="_blank"><img
+        src="${bookShopLogo}"
+        alt="${name3}"
         width="38"
         height="36"
         class="store-icon"
