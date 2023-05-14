@@ -1,6 +1,6 @@
 import { postBook, deleteBook, getBook } from './authentication';
 const mainUl = document.querySelector('.shopList__ul');
-const markupContainer = document.querySelector('.shopList__container');
+const markupContainer = document.querySelector('.shopList__list');
 
 import photo1 from '../images/shopingListBg.png';
 import photo2 from '../images/shopingListBg@2x.png';
@@ -46,12 +46,16 @@ function createShoppingListMarkup(data) {
         description,
         author,
         list_name,
-        buy_links: [{ url: url1 }, { url: url2 }, { url: url3 }],
+        buy_links: [
+          { name: name1, url: url1 },
+          { name: name2, url: url2 },
+          { name: name3, url: url3 },
+        ],
       }) =>
         `<li class="shopCard">
   <div class="shopCard__card-container">
     <div class="shopCard__photo-container">
-      <img class="shopCard__photo" src="${book_image}" alt="${description}" />
+      <img class="shopCard__photo" src="${book_image}" alt="${title}" />
     </div>
     <div class="shopCard__box-description">
       <div>
@@ -77,17 +81,17 @@ function createShoppingListMarkup(data) {
             ><img
               class="shopCard__url-amazon"
               src="${amazonLogo}"
-              alt="${description}"
+              alt="${name1}"
             />
           </a>
           <a href="${url2}" target="_blank"
-            ><img class="shopCard__url" src="${bookLogo}" alt="${description}"
+            ><img class="shopCard__url-book" src="${bookLogo}" alt="${name2}"
           /></a>
           <a href="${url3}" target="_blank"
             ><img
               class="shopCard__url"
               src="${bookShopLogo}"
-              alt="${description}"
+              alt="${name3}"
             />
           </a>
         </div>
