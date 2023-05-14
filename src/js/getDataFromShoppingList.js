@@ -19,11 +19,10 @@ async function getDataForMarkup() {
     const markup = await createShoppingListMarkup(data);
     mainUl.insertAdjacentHTML('beforeend', markup);
     markupContainer.insertAdjacentHTML('afterbegin', addTitle);
+    addPagination();
   } else {
     mainUl.insertAdjacentHTML('beforeend', noDataImg);
   }
-
-  addPagination();
 }
 
 //remove book
@@ -33,6 +32,7 @@ async function removeBook(bookID) {
   if (data !== null) {
     const markup = await createShoppingListMarkup(data);
     mainUl.innerHTML = markup;
+    addPagination();
   } else {
     markupContainer.innerHTML = noDataImg;
   }
