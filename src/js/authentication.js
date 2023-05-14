@@ -114,6 +114,12 @@ function loginFunc(verified) {
     log.classList.add('show');
     openSignUp.classList.remove('show');
     menuHeader.closest('.header__box').classList.add('autorizationstyle');
+    if (modalBookBtnSignUp) {
+      modalBookBtnSignUp.classList.add('is-hidden');
+    }
+    if (modalBookBtn) {
+      modalBookBtn.classList.remove('is-hidden');
+    }
     mobileOut.classList.add('show');
     mobileMenu.classList.add('show');
     mobileEnter.classList.remove('show');
@@ -140,6 +146,12 @@ function loginFunc(verified) {
     log.classList.remove('show');
     openSignUp.classList.add('show');
     menuHeader.closest('.header__box').classList.remove('autorizationstyle');
+    if (modalBookBtnSignUp) {
+      modalBookBtnSignUp.classList.remove('is-hidden');
+    }
+    if (modalBookBtn) {
+      modalBookBtn.classList.add('is-hidden');
+    }
     mobileOut.classList.remove('show');
     mobileMenu.classList.remove('show');
     mobileEnter.classList.add('show');
