@@ -21,26 +21,38 @@
 .modal {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 450px;
   transform: translate(-50%, -50%);
   background-color: #fff;
   width: 100%;
   max-width: 335px;
-  max-height: 762px;
   border: solid 2px #111111;
   border-radius: 10px;
+  overflow: auto;
   @media screen and (min-width: 768px) {
     max-width: 579px;
-    max-height: 465px;
+    // max-height: 465px;
     top: 50%;
     transform: translate(-50%, -50%);
   }
 }
 
+.store-icons {
+  display: flex;
+}
+
+.store-icon {
+  width: 36px;
+  height: 40px;
+}
+
 .close-btn {
   position: absolute;
-  right: 13px;
-  top: 4px;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .close-icon {
@@ -50,23 +62,27 @@
 .modal__btn {
   display: flex;
   justify-content: center;
-
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   min-width: 211px;
   max-height: 46px;
   border: solid 2px #4f2ee8;
   border-radius: 40px;
-  padding: 14px 28px 14px 28px;
   background-color: transparent;
   text-transform: uppercase;
   font-weight: 700;
   font-family: DM Sans;
   line-height: 1.28;
   letter-spacing: -0.01em;
+  cursor: pointer;
+  @media screen and (max-width: 767px) {
+    padding: 14px 0;
+  }
   @media screen and (min-width: 768px) {
     min-width: 499px;
     min-height: 64px;
+    padding: 20px 0;
+    font-size: 18px;
+    line-height: 1.33;
   }
 }
 
@@ -74,40 +90,92 @@
   display: none;
 }
 
+.information-about-status {
+  font-family: DM Sans;
+  padding-right: 46px;
+  padding-left: 47px;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  color: rgba(17, 17, 17, 0.5);
+}
 .book-container {
-  padding-top: 18px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-top: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
   @media screen and (min-width: 768px) {
     display: flex;
   }
 }
-// .modal {
-//   position: absolute;
-//   top: 93px;
-//   left: 50%;
-//   max-width: 450px;
-//   width: 100%;
-//   transform: translateX(-50%);
-//   background-color: #fff;
-//   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-//     0px 2px 1px rgba(0, 0, 0, 0.2);
-//   border-radius: 4px;
-//   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-//   @media screen and (min-width: 768px) {
-//     top: 50%;
-//     transform: translate(-50%, -50%);
-//   }
+.text-container {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
-//   @media screen and (min-width: 1440px) {
-//     max-width: 528px;
-//     transform: translate(-50%, -50%) scale(1) rotateZ(360deg);
-//   }
+.book-cover {
+  width: 287px;
+  height: 408px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  @media screen and (min-width: 768px) {
+    width: 192px;
+    height: 281px;
+    margin-right: 24px;
+  }
+}
 
-//   //   .backdrop--hidden & {
-//   //     position: absolute;
-//   //     top: 50%;
-//   //     left: 50%;
-//   //     transform: translate(-50%, -50%) scale(0) rotateZ(0deg);
-//   //   }
-// }
+.book-cover__title {
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: #111111;
+  margin-bottom: 4px;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 1.16;
+  }
+}
+
+.book-cover__author {
+  font-family: 'DM Sans';
+  font-size: 12px;
+  line-height: 1.16;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+  margin-bottom: 18px;
+}
+
+.book-cover__description {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: #111111;
+}
+.content {
+  padding-bottom: 40px;
+}
+
+.modal-book-btn__signUp {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 35px;
+  background-color: #4f2ee8;
+  border: solid 1px #4f2ee8;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
