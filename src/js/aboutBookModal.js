@@ -12,6 +12,7 @@ const btnClose = document.querySelector('.close-btn');
 const bookContainer = document.querySelector('.book-container');
 const modalBtn = document.querySelector('.modal__btn');
 const modalBookBtnSignUp = document.querySelector('.modal-book-btn__signUp');
+const underRemoveBtn = document.querySelector('.information-about-status');
 
 booksCardsList.addEventListener('click', openModal);
 modalBookBtnSignUp.addEventListener('click', openSignUpFunc);
@@ -25,13 +26,17 @@ async function openModal(e) {
     e.target.nodeName === 'H2' ||
     e.target.nodeName === 'A'
   ) {
+    bookContainer.innerHTML = '';
+    // backdrop.style.zIndex = 0;
+
     btnClose.addEventListener('click', onClosebtn);
     const bookItem = e.target.closest('.category-books__item');
     const bookId = bookItem.dataset.id;
     backdrop.classList.remove('backdrop--hidden');
 
     const bookMarkup = await fetchSearchResult(bookId);
-    bookContainer.insertAdjacentHTML('beforeend', createBookMarup(bookMarkup));
+    console.log(bookMarkup);
+    bookContainer.insertAdjacentHTML('afterbegin', createBookMarup(bookMarkup));
 
     const varGetBook = await getBook();
     if (varGetBook !== null) {
@@ -44,9 +49,11 @@ async function openModal(e) {
     }
     if (buttonState) {
       modalBtn.textContent = 'Add to shopping list';
+      underRemoveBtn.classList.add('is-hidden');
       // Тут має додаватися клас іс хіден
     } else {
       modalBtn.textContent = 'Remove from the shopping list';
+      underRemoveBtn.classList.remove('is-hidden');
       // Тут має забиратися клас іс хіден
     }
   }
@@ -72,10 +79,12 @@ async function addAndRemoveButton(e) {
   if (buttonState) {
     postBook(bookMarkup);
     modalBtn.textContent = 'Remove from the shopping list';
+    underRemoveBtn.classList.remove('is-hidden');
     // Тут має забиратися клас іс хіден
   } else {
     deleteBook(bookId);
     modalBtn.textContent = 'Add to shopping list';
+    underRemoveBtn.classList.add('is-hidden');
     // Тут має додаватися клас іс хіден
   }
 }
@@ -93,12 +102,27 @@ function createBookMarup({
   description,
   author,
 }) {
-  const markup = `<img src="${book_image}" alt="${title}" />
-  <h2>${title}</h2>
-  <p>${author}</p>
-  <p>${description}</p>
-  <svg width="10" height="10"><use href="${buy_links}"></use></svg>`;
+  const markup = `<img src="${book_image}" alt="${title}"  class="book-cover"/>
+  <div class="text-container"><h2 class="book-cover__title">${title}</h2>
+  <p class="book-cover__author">${author}</p>
+  <p class="book-cover__description">${description}</p>
+  </div>`;
 
   modalBtn.dataset.id = `${_id}`;
   return markup;
+}
+
+backdrop.addEventListener('click', onBackdropClick);
+window.addEventListener('keydown', onKeyDown);
+
+function onBackdropClick(e) {
+  if (e.target.classList.contains('backdrop')) {
+    backdrop.classList.add('backdrop--hidden');
+  }
+}
+
+function onKeyDown({ code }) {
+  if (code === 'Escape') {
+    backdrop.classList.add('backdrop--hidden');
+  }
 }

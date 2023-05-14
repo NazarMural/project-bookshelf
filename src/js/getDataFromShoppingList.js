@@ -1,7 +1,5 @@
 import { postBook, deleteBook, getBook } from './authentication';
-const mainUl = document.querySelector('.shopList__ul');
-const markupContainer = document.querySelector('.shopList__container');
-
+import { addPagination } from './pagination';
 import photo1 from '../images/shopingListBg.png';
 import photo2 from '../images/shopingListBg@2x.png';
 import amazonLogo from '../images/amazonLogo.png';
@@ -9,6 +7,8 @@ import bookLogo from '../images/bookLogo.png';
 import bookShopLogo from '../images/bookShopLogo.png';
 import deleteButtonIcon from '../images/deleteButtonIcon.png';
 
+const mainUl = document.querySelector('.shopList__ul');
+const markupContainer = document.querySelector('.shopList__list');
 //create markup
 getDataForMarkup();
 
@@ -19,6 +19,7 @@ async function getDataForMarkup() {
     const markup = await createShoppingListMarkup(data);
     mainUl.insertAdjacentHTML('beforeend', markup);
     markupContainer.insertAdjacentHTML('afterbegin', addTitle);
+    addPagination();
   } else {
     mainUl.insertAdjacentHTML('beforeend', noDataImg);
   }
@@ -31,6 +32,7 @@ async function removeBook(bookID) {
   if (data !== null) {
     const markup = await createShoppingListMarkup(data);
     mainUl.innerHTML = markup;
+    addPagination();
   } else {
     markupContainer.innerHTML = noDataImg;
   }
@@ -46,12 +48,16 @@ function createShoppingListMarkup(data) {
         description,
         author,
         list_name,
-        buy_links: [{ url: url1 }, { url: url2 }, { url: url3 }],
+        buy_links: [
+          { name: name1, url: url1 },
+          { name: name2, url: url2 },
+          { name: name3, url: url3 },
+        ],
       }) =>
-        `<li class="shopCard">
+        `<li class="shopCard is-hidden">
   <div class="shopCard__card-container">
     <div class="shopCard__photo-container">
-      <img class="shopCard__photo" src="${book_image}" alt="${description}" />
+      <img class="shopCard__photo" src="${book_image}" alt="${title}" />
     </div>
     <div class="shopCard__box-description">
       <div>
@@ -77,17 +83,17 @@ function createShoppingListMarkup(data) {
             ><img
               class="shopCard__url-amazon"
               src="${amazonLogo}"
-              alt="${description}"
+              alt="${name1}"
             />
           </a>
           <a href="${url2}" target="_blank"
-            ><img class="shopCard__url" src="${bookLogo}" alt="${description}"
+            ><img class="shopCard__url-book" src="${bookLogo}" alt="${name2}"
           /></a>
           <a href="${url3}" target="_blank"
             ><img
               class="shopCard__url"
               src="${bookShopLogo}"
-              alt="${description}"
+              alt="${name3}"
             />
           </a>
         </div>
