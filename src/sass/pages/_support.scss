@@ -20,14 +20,11 @@
     max-width: 100%;
      min-height: 100%;
     padding-left: 40px;
-    border-radius: 18px;
+    border-radius: 16px;
     color: $primary-text-color;
     fill: $primary-text-color;
-    box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
-    background-image: radial-gradient(
-        circle at top left,
-        rgba(79, 46, 232, 1),
-        rgba(255, 255, 255, 1));
+    box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
 }
 
 .list-support {
@@ -76,7 +73,6 @@
  }
 
  .swiper {
-  width: 335px;
   height: 296px;
   overflow: visible;
 }
@@ -84,16 +80,17 @@
 .support-button-next {
   position: relative;
   top: auto;
-  bottom: -30px;
-  left: 32%;
+  bottom: -10px;
+  left: calc(50% - 40px);
   background: transparent;
   border: none;
   width: 32px;
   height: 32px;
-    @media screen and (max-width: $desktop) {
+  padding: 0;
+    @media screen and (min-width: $tablet) {
       width: 38px;
       height: 38px;
-        bottom: -10px;
+      bottom: -10px;
     }
 }
 
