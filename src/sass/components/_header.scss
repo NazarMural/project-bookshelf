@@ -105,6 +105,8 @@
     }
     
 }
+
+
 .header__burger--open,
 .header__burger--close{
     background-color: $bg-color-header;
@@ -213,6 +215,10 @@
     background: #EAC645;
     border-radius: 36px;
 
+}
+
+.js-icon.current{
+    fill: #111111;
 }
 
 
@@ -380,3 +386,27 @@
 background-color: #111111;
 }
 
+.exit{
+    display: none;}
+
+.exit_show{
+    top: 60px;
+    right: 0px;
+    position: absolute;
+    width: 184px;
+    display: flex;
+    align-items: center;
+    gap:4px;
+    padding: 14px 24px;
+    justify-content: space-between;
+    height: 48px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+   line-height: 1.29;
+   letter-spacing: -0.04em; 
+   color: #111111;
+   background: #FFFFFF;
+   border: 1.5px solid #111111;
+   border-radius: 18px;
+}

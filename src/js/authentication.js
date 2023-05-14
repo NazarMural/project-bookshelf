@@ -47,16 +47,30 @@ const mobileMenu = document.querySelector('.js-mobile__nav');
 const mobileEnter = document.querySelector('.mobile-menu__singin--link');
 const userName = document.querySelector('.mobile-menu__user_name');
 const mobileConteiner = document.querySelector('.mobile-menu__container');
-
+const exit = document.querySelector('.exit');
 mobileEnter.addEventListener('click', openSignUpFunc);
 
 const logout = document.querySelector('[logOut]');
 const log = document.querySelector('.log');
 const iconShow = document.querySelector('.show__icon');
 
-log.addEventListener('click', signOutLog);
-logout.addEventListener('click', signOutLog);
+
+// log.addEventListener('click', signOutLog);
+// logout.addEventListener('click', signOutLog);
 mobileOut.addEventListener('click', signOutLog);
+exit.addEventListener('click', signOutLog)
+log.addEventListener('click', onClickExit)
+
+function onClickExit() {
+  exit.classList.toggle('exit_show')
+  
+}
+
+function removeClass() {
+  exit.classList.remove('exit_show')
+  
+}
+
 
 const timer = {
   timeout: 5000,
@@ -93,6 +107,7 @@ async function signIn(email, password) {
 
 function signOutLog() {
   signOut(auth)
+    removeClass()
     .then(() => {
       localStorage.removeItem('uid');
       // localStorage.removeItem('user-name');
@@ -112,7 +127,7 @@ function loginFunc(verified) {
     logout.classList.add('show');
     log.classList.add('show');
     openSignUp.classList.remove('show');
-   
+    // exit.classList.add('show');
     menuHeader.closest('.header__box').classList.add('autorizationstyle');
     if (modalBookBtnSignUp) {
       modalBookBtnSignUp.classList.add('is-hidden');
@@ -147,7 +162,7 @@ function loginFunc(verified) {
     menuHeader.classList.remove('show');
     logout.classList.remove('show');
     log.classList.remove('show');
-    
+    // exit.classList.remove('.show')
     openSignUp.classList.add('show');
     menuHeader.closest('.header__box').classList.remove('autorizationstyle');
     if (modalBookBtnSignUp) {
