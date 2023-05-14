@@ -8,6 +8,7 @@
     @media screen and (min-width: $desktop) {
       display: block;
       height: 490px;
+      width: 356px;
     }
   }
 
@@ -19,7 +20,7 @@
   }
   &__list {
     @media screen and (min-width: $desktop) {
-      width: 977px;
+      width: 1012px;
       margin-left: 40px;
     }
   }
@@ -113,6 +114,7 @@
     object-fit: cover;
     display: block;
     height: 100%;
+    width: 100%;
     border-radius: 8px;
   }
   &__btn {
@@ -261,12 +263,17 @@
     }
   }
   &__photo-container {
+    
     width: 100px;
     height: 100%;
     margin-right: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: inset 6px 0 5px 5px #0005;
     @media screen and (min-width: $tablet) {
       margin-right: 24px;
       width: 116px;

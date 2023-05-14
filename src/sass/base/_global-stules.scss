@@ -4,6 +4,7 @@ body {
     margin: 0;
     overflow: overlay;
     background-color: $bg-color;
+    transition: background-color 250ms $cubic;
 }
 
 .container {
