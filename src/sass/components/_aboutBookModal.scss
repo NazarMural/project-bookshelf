@@ -39,17 +39,23 @@
 
 .store-icons {
   display: flex;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.store-icons__item:not(:last-child) {
+  margin-right: 20px;
 }
 
 .store-icon {
-  width: 36px;
-  height: 40px;
+  filter: grayscale(1);
 }
 
 .close-btn {
   position: absolute;
-  right: 15px;
-  top: 10px;
+  right: 7px;
+  top: 11px;
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -63,7 +69,8 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  min-width: 211px;
+  // min-width: 211px;
+  width: 100%;
   max-height: 46px;
   border: solid 2px #4f2ee8;
   border-radius: 40px;
@@ -102,9 +109,6 @@
   color: rgba(17, 17, 17, 0.5);
 }
 .book-container {
-  padding-top: 40px;
-  padding-left: 24px;
-  padding-right: 24px;
   @media screen and (min-width: 768px) {
     display: flex;
   }
@@ -161,8 +165,11 @@
   letter-spacing: -0.04em;
   color: #111111;
 }
-.content {
-  padding-bottom: 40px;
+.modal-content {
+  padding: 40px 24px;
+  @media screen and (min-width: 768px) {
+    padding: 40px;
+  }
 }
 
 .modal-book-btn__signUp {
