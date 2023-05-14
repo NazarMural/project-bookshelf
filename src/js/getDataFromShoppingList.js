@@ -8,7 +8,7 @@ import bookShopLogo from '../images/bookShopLogo.png';
 import deleteButtonIcon from '../images/deleteButtonIcon.png';
 
 const mainUl = document.querySelector('.shopList__ul');
-const markupContainer = document.querySelector('.shopList__container');
+const markupContainer = document.querySelector('.shopList__list');
 //create markup
 getDataForMarkup();
 
