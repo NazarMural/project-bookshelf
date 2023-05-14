@@ -47,6 +47,7 @@ const mobileMenu = document.querySelector('.js-mobile__nav');
 const mobileEnter = document.querySelector('.mobile-menu__singin--link');
 const userName = document.querySelector('.mobile-menu__user_name');
 const mobileConteiner = document.querySelector('.mobile-menu__container');
+
 mobileEnter.addEventListener('click', openSignUpFunc);
 
 const logout = document.querySelector('[logOut]');
@@ -111,6 +112,7 @@ function loginFunc(verified) {
     logout.classList.add('show');
     log.classList.add('show');
     openSignUp.classList.remove('show');
+   
     menuHeader.closest('.header__box').classList.add('autorizationstyle');
     if (modalBookBtnSignUp) {
       modalBookBtnSignUp.classList.add('is-hidden');
@@ -145,6 +147,7 @@ function loginFunc(verified) {
     menuHeader.classList.remove('show');
     logout.classList.remove('show');
     log.classList.remove('show');
+    
     openSignUp.classList.add('show');
     menuHeader.closest('.header__box').classList.remove('autorizationstyle');
     if (modalBookBtnSignUp) {

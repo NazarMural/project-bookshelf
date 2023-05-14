@@ -21,8 +21,9 @@ function onClickBtnOpen() {
 
 function onClickBtnClose() {
         btnOpen.classList.remove('is-open');
-        btnClose.classList.toggle('block')
-         btnClose.classList.remove('is-open')
-        menuContainer.classList.remove('is-open')
+        btnClose.classList.toggle('block');
+        btnClose.classList.remove('is-open');
+        menuContainer.classList.remove('is-open');
      btnOpen.style.display = 'block'
+        // btnOpen.classList.toggle('block');
 }
