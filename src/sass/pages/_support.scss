@@ -80,7 +80,7 @@
 .support-button-next {
   position: relative;
   top: auto;
-  bottom: -10px;
+  bottom: -5px;
   left: calc(50% - 40px);
   background: transparent;
   border: none;
@@ -90,7 +90,7 @@
     @media screen and (min-width: $tablet) {
       width: 38px;
       height: 38px;
-      bottom: -10px;
+      bottom: -15px;
     }
 }
 
