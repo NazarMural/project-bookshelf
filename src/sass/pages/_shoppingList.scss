@@ -151,6 +151,7 @@
     border: transparent;
     align-content: center;
     justify-content: center;
+    transition: background-color 250ms $cubic;
 
     &:hover,
     &:focus {
