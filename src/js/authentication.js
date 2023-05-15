@@ -54,23 +54,19 @@ const logout = document.querySelector('[logOut]');
 const log = document.querySelector('.log');
 const iconShow = document.querySelector('.show__icon');
 
-
 // log.addEventListener('click', signOutLog);
 // logout.addEventListener('click', signOutLog);
 mobileOut.addEventListener('click', signOutLog);
-exit.addEventListener('click', signOutLog)
-log.addEventListener('click', onClickExit)
+exit.addEventListener('click', signOutLog);
+log.addEventListener('click', onClickExit);
 
 function onClickExit() {
-  exit.classList.toggle('exit_show')
-  
+  exit.classList.toggle('exit_show');
 }
 
 function removeClass() {
-  exit.classList.remove('exit_show')
-  
+  exit.classList.remove('exit_show');
 }
-
 
 const timer = {
   timeout: 5000,
@@ -106,8 +102,8 @@ async function signIn(email, password) {
 }
 
 function signOutLog() {
-  signOut(auth)
-    removeClass()
+  signOut(auth);
+  removeClass()
     .then(() => {
       localStorage.removeItem('uid');
       // localStorage.removeItem('user-name');
@@ -177,8 +173,12 @@ function loginFunc(verified) {
     mobileConteiner.classList.remove('show');
     userName.classList.remove('show');
     iconShow.classList.remove('show');
-    modalBookBtnSignUp.classList.remove('is-hidden');
-    modalBookBtn.classList.add('is-hidden');
+    if (modalBookBtnSignUp) {
+      modalBookBtnSignUp.classList.remove('is-hidden');
+    }
+    if (modalBookBtn) {
+      modalBookBtn.classList.add('is-hidden');
+    }
   }
 }
 
