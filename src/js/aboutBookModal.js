@@ -16,6 +16,7 @@ const bookContainer = document.querySelector('.book-container');
 const modalBtn = document.querySelector('.modal__btn');
 const modalBookBtnSignUp = document.querySelector('.modal-book-btn__signUp');
 const underRemoveBtn = document.querySelector('.information-about-status');
+const bodyEl = document.body;
 
 booksCardsList.addEventListener('click', openModal);
 modalBookBtnSignUp.addEventListener('click', openSignUpFunc);
@@ -34,6 +35,7 @@ async function openModal(e) {
     const bookItem = e.target.closest('.category-books__item');
     const bookId = bookItem.dataset.id;
     backdrop.classList.remove('backdrop--hidden');
+    bodyEl.classList.add('modal-open');
 
     const bookMarkup = await fetchSearchResult(bookId);
     console.log(bookMarkup.buy_links);
@@ -92,7 +94,8 @@ async function addAndRemoveButton(e) {
 
 function onClosebtn() {
   backdrop.classList.add('backdrop--hidden');
-  bookContainer.innerHTML = '';
+
+  bodyEl.classList.remove('modal-open');
 }
 
 function createBookMarup({
@@ -114,18 +117,18 @@ function createBookMarup({
   <ul class="store-icons">
   <li class="store-icons__item">
     <a href="${url1}"
-      ><img
+      class="icon-link"><img
         src="${amazonLogo}"
         alt="${name1}"
         width="62"
         height="19"
-        class="store-icon"
+        class="store-icon--amazon"
         target="_blank" 
     /></a>
   </li>
   <li class="store-icons__item">
     <a href="${url2}" target="_blank" 
-      ><img
+    class="icon-link" ><img
         src="${bookLogo}"
         alt="${name2}"
         width="33"
@@ -135,7 +138,7 @@ function createBookMarup({
   </li>
   <li class="store-icons__item">
     <a href="${url3}"
-    target="_blank"><img
+    target="_blank" class="icon-link"><img
         src="${bookShopLogo}"
         alt="${name3}"
         width="38"
@@ -147,7 +150,7 @@ function createBookMarup({
   </div>`;
 
   modalBtn.dataset.id = `${_id}`;
-  // console.log(filterlink(buy_links));
+
   return markup;
 }
 
@@ -165,9 +168,3 @@ function onKeyDown({ code }) {
     backdrop.classList.add('backdrop--hidden');
   }
 }
-
-// function filterlink(arr) {
-//   arr.map(({ url }) => {
-//     return url;
-//   });
-// }
