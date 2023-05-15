@@ -1,4 +1,7 @@
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: 'DM Sans';
     padding: 0;
     margin: 0;
@@ -34,6 +37,7 @@ body {
 }
 
 .section-books-cards {
+    margin-bottom: 50px;
     padding-top: 112px;
 
     @media screen and (max-width: 767px) {
