@@ -160,11 +160,13 @@ window.addEventListener('keydown', onKeyDown);
 function onBackdropClick(e) {
   if (e.target.classList.contains('backdrop')) {
     backdrop.classList.add('backdrop--hidden');
+    bodyEl.classList.remove('modal-open');
   }
 }
 
 function onKeyDown({ code }) {
   if (code === 'Escape') {
     backdrop.classList.add('backdrop--hidden');
+    bodyEl.classList.remove('modal-open');
   }
 }
