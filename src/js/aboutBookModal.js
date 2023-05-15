@@ -122,7 +122,7 @@ function createBookMarup({
         alt="${name1}"
         width="62"
         height="19"
-        class="store-icon store-icon--amazon"
+        class="store-icon--amazon"
         target="_blank" 
     /></a>
   </li>
