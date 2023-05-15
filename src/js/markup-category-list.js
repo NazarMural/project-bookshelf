@@ -16,7 +16,6 @@ async function getMarkupCategoryList() {
   for (const { list_name } of categoryList) {
     categoryArr.push(list_name);
   }
-  console.log(categoryArr);
   const markup = categoryArr
     .sort((a, b) => a.localeCompare(b))
     .map(

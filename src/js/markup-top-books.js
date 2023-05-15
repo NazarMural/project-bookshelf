@@ -21,8 +21,6 @@ export function allCategoryMarkup() {
   loader();
   fetchSearchResult('top-books')
     .then(categoriesTopBooks => {
-      console.log(refs.booksCardsList);
-
       refs.booksCardsList.classList.remove('category-books-list');
       refs.booksCardsList.classList.add('top-books-list');
 
@@ -45,8 +43,6 @@ export function allCategoryMarkup() {
 function createTopBooksMarkup(categoriesTopBooks) {
   let numberCategories = 0;
 
-  console.log(categoriesTopBooks[numberCategories].books);
-
   refs.topBooksCategories.forEach(element => {
     const markup = categoriesTopBooks[numberCategories].books
       .map(({ _id, book_image, title, author }) => {
@@ -54,7 +50,7 @@ function createTopBooksMarkup(categoriesTopBooks) {
           <li data-id="${_id}" class="category-books__item is-hidden-books">
           <a href="" class="category-books__link">
           <div class="category-books__img-thumb">
-          <img src="${book_image}" alt="${title}" class="category-books__img">
+          <img src="${book_image}" alt="${title}" loading="lazy" class="category-books__img">
           <p class="card-overlay">Quick view</p>
           </div>
           <h2 class="category-books__title">${title}</h2>
@@ -91,14 +87,11 @@ function createCategoriesTopBooksMarkup(categories) {
 async function onClickSeeMore(evt) {
   evt.preventDefault();
   if (!evt.target.classList.contains('top-books__button')) {
-    console.log('Ти натиснув не на кнопку.');
     return;
   }
-  console.log('Ти натиснув на кнопку.');
   refs.booksCardsList.classList.remove('top-books-list');
   refs.booksCardsList.classList.add('category-books-list');
   const category = evt.target.dataset.list_name;
-  console.log(category);
   refs.booksCardsTitle = document.querySelector('.books-cards__title');
   refs.booksCardsTitle.remove();
   changeCurrentCategory(category);

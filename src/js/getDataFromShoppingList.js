@@ -57,7 +57,7 @@ function createShoppingListMarkup(data) {
         `<li class="shopCard is-hidden">
   <div class="shopCard__card-container">
     <div class="shopCard__photo-container">
-      <img class="shopCard__photo" src="${book_image}" alt="${title}" />
+      <img class="shopCard__photo" src="${book_image}" alt="${title} loading="lazy"" />
     </div>
     <div class="shopCard__box-description">
       <div>
@@ -67,7 +67,7 @@ function createShoppingListMarkup(data) {
             <p class="shopCard__list-name">${list_name}</p>
           </div>
           <button class="shopCard__btn" data-id=${_id} type="submit">
-            <img src="${deleteButtonIcon}" alt="${title}" />
+            <img src="${deleteButtonIcon}" alt="${title}" loading="lazy" />
           </button>
         </div>
         <div class="shopCard__description-container block-with-ellipsis">
@@ -84,16 +84,18 @@ function createShoppingListMarkup(data) {
               class="shopCard__url-amazon"
               src="${amazonLogo}"
               alt="${name1}"
+              loading="lazy"
             />
           </a>
           <a href="${url2}" target="_blank"
-            ><img class="shopCard__url-book" src="${bookLogo}" alt="${name2}"
+            ><img class="shopCard__url-book" src="${bookLogo}" alt="${name2}" loading="lazy"
           /></a>
           <a href="${url3}" target="_blank"
             ><img
               class="shopCard__url"
               src="${bookShopLogo}"
               alt="${name3}"
+              loading="lazy"
             />
           </a>
         </div>

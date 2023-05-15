@@ -17,10 +17,6 @@
     }
 }
 
-// .list-categories {
-//     list-style: none;
-// }
-
 .category__item {
     margin-top: 24px;
 
@@ -83,7 +79,6 @@
 
 .category-books__item {
     width: 100%;
-    // margin-bottom: 40px;
 
     @media screen and (min-width: 768px) {
         width: calc((100% - 2*25px)/3);
@@ -103,10 +98,7 @@
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 14px;
-    // border: 1px solid $secondary-text-color-darkt;
     box-shadow: inset 6px 0 5px 5px #0005;
-    // box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1),
-    //     0px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 1px 1px -1px rgba(0, 0, 0, 0.1);
 }
 
 .category-books__img {
@@ -136,7 +128,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    // height: 70px;
+    
     transform: translateY(30%);
     opacity: 0;
     background-color: $primary-accent-color;
