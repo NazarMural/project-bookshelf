@@ -17,7 +17,6 @@ const modalBtn = document.querySelector('.modal__btn');
 const modalBookBtnSignUp = document.querySelector('.modal-book-btn__signUp');
 const underRemoveBtn = document.querySelector('.information-about-status');
 const bodyEl = document.body;
-const modalEl = document.querySelector('.modal');
 
 booksCardsList.addEventListener('click', openModal);
 modalBookBtnSignUp.addEventListener('click', openSignUpFunc);
@@ -41,9 +40,6 @@ async function openModal(e) {
     const bookMarkup = await fetchSearchResult(bookId);
     console.log(bookMarkup.buy_links);
     bookContainer.insertAdjacentHTML('beforeend', createBookMarup(bookMarkup));
-    // if (bodyEl.classList.contains('dark-theme')) {
-    //   modalEl.classList.toggle('dark-theme');
-    // }
 
     const varGetBook = await getBook();
     if (varGetBook !== null) {
@@ -126,7 +122,7 @@ function createBookMarup({
         alt="${name1}"
         width="62"
         height="19"
-        class="store-icon"
+        class="store-icon store-icon--amazon"
         target="_blank" 
     /></a>
   </li>
@@ -154,7 +150,7 @@ function createBookMarup({
   </div>`;
 
   modalBtn.dataset.id = `${_id}`;
-  // console.log(filterlink(buy_links));
+
   return markup;
 }
 
@@ -172,9 +168,3 @@ function onKeyDown({ code }) {
     backdrop.classList.add('backdrop--hidden');
   }
 }
-
-// function filterlink(arr) {
-//   arr.map(({ url }) => {
-//     return url;
-//   });
-// }

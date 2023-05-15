@@ -39,13 +39,13 @@ body.modal-open {
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
   }
-}
-.backdrop--hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
+  .dark-theme & {
+    background-color: $bg-color-darkt;
+  }
 }
 
-.dark-theme {
-  color: $primary-text-color-darkt;
+.backdrop--hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .store-icons {
@@ -60,8 +60,15 @@ body.modal-open {
 }
 
 .store-icon {
-  filter: grayscale(1);
+  filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
   transition: filter 250ms $cubic;
+}
+
+.store-icon--amazon {
+  .dark-theme & {
+    filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%)
+      contrast(95%);
+  }
 }
 
 .store-icon:hover {
@@ -80,6 +87,9 @@ body.modal-open {
 .close-icon {
   fill: #111111;
   transition: fill 250ms $cubic, width 250ms $cubic, height 250ms$cubic;
+  .dark-theme & {
+    fill: $primary-text-color-darkt;
+  }
 }
 
 .close-icon:hover {
@@ -105,6 +115,9 @@ body.modal-open {
   letter-spacing: -0.01em;
   cursor: pointer;
   transition: color 250ms $cubic, background-color 250ms $cubic;
+  .dark-theme & {
+    color: $primary-text-color-darkt;
+  }
   @media screen and (max-width: 767px) {
     padding: 14px 0;
   }
@@ -173,7 +186,13 @@ body.modal-open {
     font-size: 24px;
     line-height: 1.16;
   }
+  .dark-theme & {
+    color: $primary-text-color-darkt;
+  }
 }
+// .book-cover__title .dark-theme {
+//   color: $primary-text-color-darkt;
+// }
 
 .book-cover__author {
   font-family: 'DM Sans';
@@ -194,6 +213,9 @@ body.modal-open {
   letter-spacing: -0.04em;
   color: #111111;
   min-height: 50px;
+  .dark-theme & {
+    color: $primary-text-color-darkt;
+  }
 }
 .modal-content {
   padding: 40px 24px;
