@@ -155,6 +155,9 @@ body.modal-open {
   letter-spacing: -0.04em;
   line-height: 1.2;
   color: rgba(17, 17, 17, 0.5);
+  .dark-theme & {
+    color: $bg-color-header;
+  }
 }
 .book-container {
   @media screen and (min-width: 768px) {
