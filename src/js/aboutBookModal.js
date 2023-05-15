@@ -32,6 +32,8 @@ async function openModal(e) {
   ) {
     bookContainer.innerHTML = '';
     btnClose.addEventListener('click', onClosebtn);
+    backdrop.addEventListener('click', onBackdropClick);
+    window.addEventListener('keydown', onKeyDown);
     const bookItem = e.target.closest('.category-books__item');
     const bookId = bookItem.dataset.id;
     backdrop.classList.remove('backdrop--hidden');
@@ -154,11 +156,9 @@ function createBookMarup({
   return markup;
 }
 
-backdrop.addEventListener('click', onBackdropClick);
-window.addEventListener('keydown', onKeyDown);
-
 function onBackdropClick(e) {
   if (e.target.classList.contains('backdrop')) {
+    backdrop.removeEventListener('click', onBackdropClick);
     backdrop.classList.add('backdrop--hidden');
     bodyEl.classList.remove('modal-open');
   }
@@ -166,6 +166,7 @@ function onBackdropClick(e) {
 
 function onKeyDown({ code }) {
   if (code === 'Escape') {
+    window.removeEventListener('keydown', onKeyDown);
     backdrop.classList.add('backdrop--hidden');
     bodyEl.classList.remove('modal-open');
   }
