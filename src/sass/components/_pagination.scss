@@ -9,7 +9,7 @@
     margin: 0px 0 12px !important;
 
     @media screen and (min-width: 768px) {
-    margin: 20px 0 12px !important;
+        margin: 20px 0 12px !important;
     }
 }
 
@@ -33,7 +33,7 @@
     margin-right: 8px !important;
     border: 1px solid #000000 !important;
 
-    
+
 }
 
 a.tui-page-btn {
@@ -50,7 +50,7 @@ a.tui-page-btn {
 .tui-pagination .tui-first {
     margin-right: 5px !important;
     background-color: $primary-button-pagination-color;
-    
+
     .dark-theme & {
         background-color: #000000;
         border: 1px solid #000000 !important;
@@ -73,16 +73,17 @@ a.tui-page-btn {
     background-color: $secondary-button-pagination-color;
 
     .dark-theme & {
-            border: 1px solid #000000 !important;
-        }
+        border: 1px solid #000000 !important;
+    }
 }
+
 .tui-pagination .tui-last {
     margin-right: 0px !important;
     background-color: $secondary-button-pagination-color;
 
     .dark-theme & {
-            border: 1px solid #000000 !important;
-        }
+        border: 1px solid #000000 !important;
+    }
 }
 
 .tui-is-selected {
@@ -91,5 +92,14 @@ a.tui-page-btn {
     .dark-theme & {
         background-color: $button-pagination-color-darkt !important;
         color: $bg-color-header-darkt !important;
+    }
+}
+
+.tui-ico-first,
+.tui-ico-prev {
+    filter: opacity(1) contrast(0);
+
+    .tui-is-disabled & {
+        filter: opacity(0.2);
     }
 }

@@ -73,6 +73,21 @@
 
 fill: $bg-color-header;
 }
+.mobile-menu--shoping.current {
+    font-weight: 700;
+    color: #111111;
+    padding: 8px 16px 8px 16px;
+    background: #EAC645;
+    border-radius: 36px;
+
+}
+.mobile-menu--icon{
+
+fill: $bg-color-header;
+}
+.mobile-menu--icon.current{
+    fill:#111111;
+}
 
 .mobile-menu__singin--link{
     /*display: block;*/
@@ -175,12 +190,17 @@ fill: $bg-color-header;
 }
 
 
-.mobile-menu__container{
+.container.mobile-menu__container{
     &.show{ 
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 112px);
     padding-top: 20px;
-    padding-bottom: 20px;}
+    padding-bottom: 20px;
+    padding-left: 0px;}
 }
 
+.mobile-menu--thumb{
+    padding-top: 40px;
+    padding-left: 0px;
+}

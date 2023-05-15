@@ -1,0 +1,51 @@
+export const team = [
+  {
+    name: 'Nazar Mural',
+    position: 'Team Lead, Developer',
+    description: '',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/nazar-mural.jpg',
+    url: 'https://github.com/NazarMural',
+  },
+  {
+    name: 'Oleksii Maiok',
+    position: 'Scrum, Developer',
+    description: '',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/nazar-mural.jpg',
+    url: 'https://github.com/Maniyavel',
+  },
+  {
+    name: 'Alona Kuznietsova',
+    position: 'Developer',
+    description: '',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/nazar-mural.jpg',
+    url: 'https://github.com/acvetochka',
+  },
+  {
+    name: 'Kate Chernysheva',
+    position: 'Developer',
+    description: '',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/kate-chernysheva.jpg',
+    url: 'https://github.com/kateChernysheva1',
+  },
+  {
+    name: 'Tetiana Palii',
+    position: ' Developer',
+    description: '',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/tetiana-palii.jpg',
+    url: 'https://github.com/TetiPalii',
+  },
+  {
+    name: 'Viktoriia Khmelevska',
+    position: 'Developer',
+    description: '',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/nazar-mural.jpg',
+    url: 'https://github.com/ViktoriiaKhmelevska',
+  },
+  {
+    name: 'Nataliia Korotych',
+    position: 'Scrum, Developer',
+    description: '',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/natalia-korotych.jpg',
+    url: 'https://github.com/Nataliia-84',
+  },
+];

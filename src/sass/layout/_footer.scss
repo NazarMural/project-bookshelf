@@ -1,0 +1,43 @@
+.footer {
+    background: #fff;
+    border: 1.5px solid #111;
+    border-radius: 8px 8px 0 0;
+    padding: 30px 0;
+    transition: background-color 250ms $cubic,
+        border 250ms $cubic;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    .dark-theme & {
+        background: #111;
+        border: 1.5px solid #fff;
+    }
+
+}
+
+.footer-copyright {
+    color: $primary-text-color;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+
+    .dark-theme & {
+        color: $primary-text-color-darkt
+    }
+}
+
+.footer-link {
+    color: $accent-text-color;
+
+    &:hover {
+        text-decoration: underline $accent-text-color solid;
+    }
+
+    .dark-theme & {
+        color: $primary-accent-color;
+
+        &:hover {
+            text-decoration: underline $primary-accent-color solid;
+        }
+    }
+}

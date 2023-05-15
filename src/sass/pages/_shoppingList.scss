@@ -1,10 +1,16 @@
 .shopList {
+  &__main {
+    padding-top: 112px;
+  }
+
   &__fonds {
     overflow: hidden;
     display: none;
+
     @media screen and (min-width: $tablet) {
       display: none;
     }
+
     @media screen and (min-width: $desktop) {
       display: block;
       height: 490px;
@@ -14,16 +20,19 @@
 
   &__container {
     overflow: hidden;
+
     @media screen and (min-width: $desktop) {
       display: flex;
     }
   }
+
   &__list {
     @media screen and (min-width: $desktop) {
       width: 1012px;
       margin-left: 40px;
     }
   }
+
   &__title {
     font-family: 'DM Sans';
     color: $primary-text-color;
@@ -34,15 +43,18 @@
     margin: 0;
     margin-bottom: 120px;
     white-space: nowrap;
+
     @media screen and (min-width: $tablet) {
       font-size: 48px;
       line-height: 1.08;
       margin-bottom: 140px;
     }
+
     .dark-theme & {
       color: $bg-color-header;
     }
   }
+
   &__titleMarkup {
     font-family: 'DM Sans';
     color: $primary-text-color;
@@ -53,23 +65,29 @@
     margin: 0;
     margin-bottom: 40px;
     white-space: nowrap;
+
     @media screen and (min-width: $tablet) {
       font-size: 48px;
       line-height: 1.08;
     }
+
     .dark-theme & {
       color: $bg-color-header;
     }
   }
+
   &__img {
     width: 265px;
+
     @media screen and (min-width: $tablet) {
       width: 322px;
     }
   }
+
   &__accent {
     color: $secondary-accent-color;
   }
+
   &__text {
     width: 215px;
     text-align: center;
@@ -82,12 +100,14 @@
     line-height: 1.28;
     letter-spacing: -0.02em;
     color: rgba(0, 0, 0, 0.6);
+
     @media screen and (min-width: $tablet) {
       font-size: 18px;
       line-height: 1.33;
       width: 335px;
     }
   }
+
   &__imgContainer {
     display: flex;
     flex-direction: column;
@@ -95,6 +115,7 @@
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+
     @media screen and (min-width: $tablet) {
       width: 349px;
     }
@@ -103,12 +124,15 @@
 
 .shopCard {
   width: 335px;
+
   @media screen and (min-width: $tablet) {
     width: 704px;
   }
+
   @media screen and (min-width: $desktop) {
     width: 100%;
   }
+
   &__photo {
     margin: 0;
     object-fit: cover;
@@ -117,6 +141,7 @@
     width: 100%;
     border-radius: 8px;
   }
+
   &__btn {
     width: 28px;
     height: 28px;
@@ -125,11 +150,13 @@
     border: transparent;
     align-content: center;
     justify-content: center;
+
     &:hover,
     &:focus {
       background-color: $secondary-button-pagination-color;
       filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
     }
+
     @media screen and (min-width: $tablet) {
       width: 34px;
       height: 34px;
@@ -137,6 +164,7 @@
       align-items: center;
     }
   }
+
   &__title {
     font-family: 'DM Sans';
     font-weight: 700;
@@ -146,15 +174,18 @@
     color: $primary-text-color;
     overflow: hidden;
     margin-bottom: 4px;
+
     @media screen and (max-width: $tablet) {
       text-overflow: ellipsis;
       max-width: 144px;
       white-space: nowrap;
     }
+
     .dark-theme & {
       color: $bg-color-header;
     }
   }
+
   &__list-name {
     font-family: 'DM Sans';
 
@@ -168,10 +199,12 @@
     text-overflow: ellipsis;
     max-width: 150px;
     margin-bottom: 8px;
+
     @media screen and (min-width: $tablet) {
       max-width: 100%;
     }
   }
+
   &__description {
     font-family: 'DM Sans';
 
@@ -181,16 +214,20 @@
     letter-spacing: -0.04em;
     color: $primary-text-color;
     width: 193px;
+
     @media screen and (min-width: $tablet) {
       width: 508px;
     }
+
     @media screen and (min-width: $desktop) {
       width: 808px;
     }
+
     .dark-theme & {
       color: $bg-color-header;
     }
   }
+
   &__author {
     font-family: 'DM Sans';
     font-style: italic;
@@ -202,6 +239,7 @@
 
     color: $tertiary-text-color-darkt;
   }
+
   &__url {
     width: 16px;
     height: 16px;
@@ -210,18 +248,22 @@
     &:focus {
       filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
     }
+
     @media screen and (min-width: $tablet) {
       width: 32px;
       height: 30px;
     }
   }
+
   &__url-amazon {
     width: 32px;
     height: 11px;
+
     &:hover,
     &:focus {
       filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
     }
+
     @media screen and (min-width: $tablet) {
       width: 48px;
       height: 15px;
@@ -233,19 +275,24 @@
       filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
     }
   }
+
   &__url-book {
     width: 16px;
     height: 16px;
+
     &:hover,
     &:focus {
       filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
     }
+
     @media screen and (min-width: $tablet) {
       width: 28px;
       height: 27px;
     }
+
     filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
   }
+
   &__card-container {
     display: flex;
     justify-content: space-between;
@@ -256,14 +303,17 @@
     box-sizing: border-box;
     margin-bottom: 20px;
   }
+
   &__description-container {
     width: 193px;
+
     @media screen and (min-width: $tablet) {
       width: 508px;
     }
   }
+
   &__photo-container {
-    
+
     width: 100px;
     height: 100%;
     margin-right: 14px;
@@ -274,46 +324,56 @@
     object-fit: cover;
     border-radius: 8px;
     box-shadow: inset 6px 0 5px 5px #0005;
+
     @media screen and (min-width: $tablet) {
       margin-right: 24px;
       width: 116px;
     }
   }
+
   &__info-block {
     display: flex;
     justify-content: space-between;
   }
+
   &__urlList {
     display: flex;
     align-items: baseline;
     gap: 8px;
+
     @media screen and (min-width: $tablet) {
       gap: 8px;
       align-items: center;
     }
   }
+
   &__boxAutor {
     display: flex;
 
     justify-content: space-between;
+
     @media screen and (min-width: $tablet) {
       align-items: flex-end;
     }
   }
+
   &__box-description {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     @media screen and (min-width: $tablet) {
       width: 100%;
     }
   }
 }
+
 .block-with-ellipsis {
   display: -webkit-box;
   -webkit-box-orient: vertical;
 
   -webkit-line-clamp: 3;
+
   @media screen and (max-width: $tablet) {
     overflow: hidden;
   }
@@ -321,6 +381,7 @@
 
 .block-with-ellipsis::after {
   content: '...';
+
   @media screen and (min-width: $tablet) {
     content: '';
   }

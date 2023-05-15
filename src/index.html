@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="./images/favicon.png" />
   <title>Page title</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./sass/index.scss" />
-  
   <script type="module" src="./index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 </head>
@@ -24,10 +24,10 @@
             <ul class="list-categories"></ul>
           </section>
           <section class="section-support">
-           <include src="./partials/support.html"></include>
+            <include src="./partials/support.html"></include>
           </section>
         </aside>
-        <section class="section-books-cards">
+        <section class="section-books-cards" id="category-section">
           <ul class="books-cards__list"></ul>
         </section>
       </div>
@@ -40,7 +40,9 @@
         </div>
       </button>
   </main>
+  <include src="./partials/footer.html"></include>
   <include src="./partials/aboutBookModal.html"></include>
+  <include src="./partials/modal-team.html"></include>
 </body>
 
 </html>

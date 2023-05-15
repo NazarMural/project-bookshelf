@@ -20,7 +20,7 @@
         <li>
           <a class="header__link--shoping current js-link-shoping" href="./shoppingListPage.html"
             >Shopping list
-            <svg class="js-icon" width="20px" height="20px">
+            <svg class="js-icon current" width="20px" height="20px">
               <use href="./images/sprite.svg#icon-uil_cart"></use>
             </svg>
           </a>
@@ -39,14 +39,18 @@
         <svg width="37px" height="37px"> 
         <use href="./images/sprite.svg#icon-user"></use></svg>
          <button class="log-out" type="button" logOut>Log out</button>
-         
+          <!-- <button class="log-out" type="button" logOut>Log out</button> -->
           <svg width="23px" height="26px"> 
           <use href="./images/sprite.svg#icon-caret-down"></use>
-         </svg>
-      
- 
+         </svg>  
+
 </div>
-      
+       <button class="exit" type="button">
+      Log out
+  <svg width="20px" height="20px"> 
+          <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
+        </svg>
+</button> 
 
       
 
@@ -68,7 +72,7 @@
   
 <div class="mobile-menu js-menu-container">
   
-  <div class="mobile-menu__container"> 
+  <div class="container mobile-menu__container mobile-menu--thumb"> 
     <a class="mobile-menu__singin--link" href="#">
       Sign up
         <svg width="20px" height="20px">
@@ -88,7 +92,7 @@
       <li class="mobile-menu--home "><a href="./index.html">Home</a></li>
       <li class="mobile-menu--shoping current">
         <a href="./shoppingListPage.html">Shopping list </a>
-        <svg class="mobile-menu--icon" width="20px" height="20px">
+        <svg class="mobile-menu--icon current" width="20px" height="20px">
           <use href="./images/sprite.svg#icon-uil_cart"></use>
         </svg>
       </li>
@@ -101,6 +105,7 @@
 </button>
   
   </div>  
+  
   <img class="mobile-menu--images" 
   srcset="./images/booksgr@2x.png"
   src="./images/booksgr.png" alt="books"> 

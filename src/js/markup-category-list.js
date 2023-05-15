@@ -4,7 +4,7 @@ const listCategory = document.querySelector('.list-categories');
 
 function getMarkupAllCategory() {
   const markup =
-    '<li><a href="./index.html" class="js-cat-link category__link-all current-category">All category</a></li>';
+    '<li><a href="#category-title" class="js-cat-link category__link-all current-category">All category</a></li>';
   listCategory.insertAdjacentHTML('afterbegin', markup);
 }
 
@@ -21,7 +21,7 @@ async function getMarkupCategoryList() {
     .sort((a, b) => a.localeCompare(b))
     .map(
       item =>
-        `<li class="category__item"><a href="" class="js-cat-link category__link">${item}</a></li>`
+        `<li class="category__item"><a href="#category-title" class="js-cat-link category__link">${item}</a></li>`
     )
     .join('');
   listCategory.insertAdjacentHTML('beforeend', markup);
