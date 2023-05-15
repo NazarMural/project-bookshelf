@@ -1,6 +1,7 @@
 import { fetchCategoryList } from './fetch-category';
 import { allCategoryMarkup } from './markup-top-books';
 import { loader, loadRemove } from './loader';
+import { scrollAnchor } from './scroll-anchor';
 
 const listCategory = document.querySelector('.list-categories');
 const bookSection = document.querySelector('.books-cards__list');
@@ -13,14 +14,15 @@ async function onClickCategory(evt) {
 
   evt.preventDefault();
   if (evt.target.classList.contains('category__link-all')) {
-    // loader();
     removeMarkup();
     evt.target.classList.add('current-category');
     allCategoryMarkup();
+    scrollAnchor();
   }
 
   if (evt.target.classList.contains('category__link')) {
     loader();
+    // scrollAnchor();
     removeMarkup();
     const category = evt.target.textContent;
     evt.target.classList.add('current-category');
@@ -28,6 +30,7 @@ async function onClickCategory(evt) {
     const categoryItem = await fetchCategoryList(category);
     createMarkupBooks(categoryItem);
     loadRemove();
+    scrollAnchor();
   }
 }
 

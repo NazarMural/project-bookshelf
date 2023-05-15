@@ -28,9 +28,7 @@ export function allCategoryMarkup() {
 
       refs.booksCardsList.innerHTML = '';
       addHeading('Best Sellers Books');
-
       createCategoriesTopBooksMarkup(categoriesTopBooks);
-
       refs.topBooksCategories = document.querySelectorAll(
         '.top-books-categories__list'
       );
