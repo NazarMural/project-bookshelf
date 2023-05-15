@@ -10,3 +10,4 @@ import './js/mobile';
 //import './js/shoppingList';
 import './js/loader';
 import './js/scroll-anchor';
+import './js/team-modal';
