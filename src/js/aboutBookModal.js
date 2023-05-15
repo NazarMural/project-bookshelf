@@ -94,7 +94,7 @@ async function addAndRemoveButton(e) {
 
 function onClosebtn() {
   backdrop.classList.add('backdrop--hidden');
-  bookContainer.innerHTML = '';
+
   bodyEl.classList.remove('modal-open');
 }
 
