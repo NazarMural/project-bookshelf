@@ -1,5 +1,5 @@
 const refs = {
-  btnToTop: document.querySelector('.button-up'),
+  btnToTop: document.querySelector('.button-up__box'),
 };
 
 refs.btnToTop.addEventListener('click', () => {
