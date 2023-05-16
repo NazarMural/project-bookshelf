@@ -107,6 +107,10 @@
       line-height: 1.33;
       width: 335px;
     }
+
+    .dark-theme & {
+      color: $secondary-text-color-darkt;
+    }
   }
 
   &__imgContainer {
@@ -275,8 +279,7 @@
     filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
 
     .dark-theme & {
-      filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%)
-        contrast(95%);
+      filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
     }
   }
 

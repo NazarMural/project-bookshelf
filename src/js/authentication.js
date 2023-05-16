@@ -41,7 +41,7 @@ Notiflix.Notify.init({
 });
 
 const menuHeader = document.querySelector('.js-list__nav');
-const openSignUp = document.querySelector('[openSignUp]');
+const openSignUp = document.querySelector('[data-openSignUp]');
 const modalBookBtn = document.querySelector('.modal__btn');
 const modalBookBtnSignUp = document.querySelector('.modal-book-btn__signUp');
 openSignUp.addEventListener('click', openSignUpFunc);
@@ -54,7 +54,7 @@ const mobileConteiner = document.querySelector('.mobile-menu__container');
 const exit = document.querySelector('.exit');
 mobileEnter.addEventListener('click', openSignUpFunc);
 
-const logout = document.querySelector('[logOut]');
+const logout = document.querySelector('[data-logOut]');
 const log = document.querySelector('.log');
 const iconShow = document.querySelector('.show__icon');
 
@@ -235,10 +235,10 @@ async function getBook() {
   return res;
 }
 
-const modalSignUp = document.querySelector('[modalSignUp]');
-const modalForm = document.querySelector('[modalForm]');
-const buttonSignUp = document.querySelector('[buttonSignUp]');
-const buttonSignIn = document.querySelector('[buttonSignIn]');
+const modalSignUp = document.querySelector('[data-modalSignUp]');
+const modalForm = document.querySelector('[data-modalForm]');
+const buttonSignUp = document.querySelector('[data-buttonSignUp]');
+const buttonSignIn = document.querySelector('[data-buttonSignIn]');
 
 modalSignUp.addEventListener('click', modalSignUpFunc);
 modalForm.addEventListener('submit', modalFormFunc);

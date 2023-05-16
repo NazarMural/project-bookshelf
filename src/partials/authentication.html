@@ -1,5 +1,5 @@
-<div class="k-modal" modalSignUp>
-  <form class="k-modal__form" modalForm>
+<div class="k-modal" data-modalSignUp>
+  <form class="k-modal__form" data-modalForm>
     <button type="button" class="k-modal__close">
       <img src="./images/k-x-close.svg" alt="close" />
     </button>
@@ -10,25 +10,14 @@
     </div>
 
     <div class="k-modal__block">
-      <input
-        class="k-modal__input"
-        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$"
-        type="email"
-        id="email"
-        name="email"
-      />
+      <input class="k-modal__input" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$" type="email" id="email"
+        name="email" />
       <label for="email">email</label>
       <img class="k-modal__icon" src="./images/k-mail.svg" alt="email" />
     </div>
 
     <div class="k-modal__block">
-      <input
-        class="k-modal__input"
-        type="password"
-        id="password"
-        name="password"
-        minlength="7"
-      />
+      <input class="k-modal__input" type="password" id="password" name="password" minlength="7" />
       <label for="password">password</label>
       <img class="k-modal__icon" src="./images/k-lock.svg" alt="lock" />
     </div>
@@ -38,8 +27,8 @@
     </button>
 
     <div class="k-modal__footer">
-      <button type="button" buttonSignUp>Sign up</button>
-      <button class="active" type="button" buttonSignIn>Sign In</button>
+      <button type="button" data-buttonSignUp>Sign up</button>
+      <button class="active" type="button" data-buttonSignIn>Sign In</button>
     </div>
   </form>
 </div>

@@ -10,7 +10,7 @@ export const team = [
     name: 'Oleksii Maiok',
     position: 'Scrum, Developer',
     description: 'Shopping-List Page, API, Favicon, LocalStorage, HTML, SCSS',
-    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/nazar-mural.jpg',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/oleksii-maiok.jpg',
     url: 'https://github.com/moses35',
   },
   {
@@ -37,8 +37,8 @@ export const team = [
   {
     name: 'Masha Kozlova',
     position: 'Developer',
-    description: 'ShoppingList-interaction with Firebase, HTML, SCSS',
-    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/tetiana-palii.jpg',
+    description: 'ShoppingList, HTML, SCSS',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/masha-kozlova.jpg',
     url: 'https://github.com/Maniyavel',
   },
   {
@@ -52,7 +52,7 @@ export const team = [
     name: 'Viktoriia Khmelevska',
     position: 'Developer',
     description: 'Support Ukraine, Swiper, HTML, SCSS',
-    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/viktoriia-khmelevska.jpg',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/viktoriia-khmelevska.png',
     url: 'https://github.com/ViktoriiaKhmelevska',
   },
 ];
