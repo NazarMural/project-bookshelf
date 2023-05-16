@@ -354,10 +354,16 @@ function modalLoginFunc(email, password) {
 function sendEmail() {
   sendEmailVerification(auth.currentUser).then(() => {
     console.log('SENT EMAIL => CHECK');
-    Notiflix.Notify.success(
-      'Успешно зарегистрировано, проверьте почту для верификации!',
+    Notiflix.Report.success(
+      'Registration was successful!',
+      'WARNING! Check your verification email',
+      'Okay',
       timer
     );
+    // Notiflix.Notify.success(
+    //   'Успешно зарегистрировано, проверьте почту для верификации!',
+    //   timer
+    // );
   });
 }
 
@@ -377,18 +383,25 @@ function onClickIconPass() {
   }
 }
 
-Notiflix.Notify.init({
-  width: '300px',
-  borderRadius: '18px',
-  position: 'center-top',
-  // closeButton: true,
-  fontFamily: 'DM Sans',
-  fontSize: '20px',
-  fontAwesomeIconSize: '38px',
-  distance: '30%',
+Notiflix.Report.init({
   success: {
-    background: '#4F2EE8',
-    textColor: '#fff',
-    notiflixIconColor: 'rgba(255,255,255,0.2)',
+    svgColor: '#4F2EE8',
+    buttonBackground: '#4F2EE8',
+    backOverlayColor: 'rgba(0,0, 0,0.2)',
   },
 });
+// Notiflix.Notify.init({
+//   width: '300px',
+//   borderRadius: '18px',
+//   position: 'center-top',
+//   closeButton: true,
+//   fontFamily: 'DM Sans',
+//   fontSize: '20px',
+//   fontAwesomeIconSize: '38px',
+//   distance: '30%',
+//   success: {
+//     background: '#4F2EE8',
+//     textColor: '#fff',
+//     notiflixIconColor: 'rgba(255,255,255,0.2)',
+//   },
+// });
