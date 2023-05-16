@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" type="image/png" href="./images/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shoping list</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./sass/index.scss" />
 
-    <script type="module" src="./shopingListPage.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shoping list</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./sass/index.scss" />
 
-  <body>
-    <include src="./partials/header_shoping.html"></include>
-    <main class="shopList__main">
-      <div class="container">
-        <div class="main-container">
-          <div class="shopList__container">
-            <div class="shopList__fonds">
-              <include src="./partials/support.html"></include>
+  <script type="module" src="./shopingListPage.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+</head>
+
+<body>
+  <include src="./partials/header_shoping.html"></include>
+  <main class="shopList__main">
+    <div class="container">
+      <div class="main-container">
+        <div class="shopList__container">
+          <div class="shopList__fonds">
+            <include src="./partials/support.html"></include>
+          </div>
+          <div class="shopList__list">
+            <ul class="shopList__ul"></ul>
+            <div class="pagination-container">
+              <div id="pagination" class="tui-pagination"></div>
             </div>
-            <div class="shopList__list">
-              <ul class="shopList__ul"></ul>
-              <div class="pagination-container">
-                <div id="pagination" class="tui-pagination"></div>
-              </div>
-              <include src="./partials/authentication.html"></include>
-            </div>
+            <!-- <include src="./partials/authentication.html"></include> -->
           </div>
         </div>
       </div>
-    </main>
-    <include src="./partials/authentication.html"></include>
-    <include src="./partials/footer.html"></include>
-    <include src="./partials/modal-team.html"></include>
-  </body>
+    </div>
+  </main>
+  <include src="./partials/authentication.html"></include>
+  <include src="./partials/footer.html"></include>
+  <include src="./partials/modal-team.html"></include>
+</body>
+
 </html>
