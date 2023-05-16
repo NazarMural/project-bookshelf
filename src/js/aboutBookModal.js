@@ -119,13 +119,13 @@ function createBookMarup({
   <ul class="store-icons">
   <li class="store-icons__item">
     <a href="${url1}"
+    target="_blank" 
       class="icon-link"><img
         src="${amazonLogo}"
         alt="${name1}"
         width="62"
         height="19"
         class="store-icon--amazon"
-        target="_blank" 
     /></a>
   </li>
   <li class="store-icons__item">
