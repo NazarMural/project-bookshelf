@@ -11,13 +11,13 @@ export const team = [
     position: 'Scrum, Developer',
     description: 'Shopping-List Page, API, Favicon, LocalStorage, HTML, SCSS',
     img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/nazar-mural.jpg',
-    url: 'https://github.com/Maniyavel',
+    url: 'https://github.com/moses35',
   },
   {
     name: 'Alona Kuznietsova',
     position: 'Developer',
     description: 'Category-Books, API, Loader, Footer+TeamModal, HTML, SCSS',
-    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/kate-chernysheva.jpg',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/alona-kuznietsova.jpg',
     url: 'https://github.com/acvetochka',
   },
   {
@@ -39,7 +39,7 @@ export const team = [
     position: 'Developer',
     description: 'ShoppingList-interaction with Firebase, HTML, SCSS',
     img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/tetiana-palii.jpg',
-    url: 'https://github.com/ViktoriiaKhmelevska',
+    url: 'https://github.com/Maniyavel',
   },
   {
     name: 'Nataliia Korotych',
@@ -52,7 +52,7 @@ export const team = [
     name: 'Viktoriia Khmelevska',
     position: 'Developer',
     description: 'Support Ukraine, Swiper, HTML, SCSS',
-    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/nataliia-korotych.jpg',
-    url: 'https://github.com/Nataliia-84',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/viktoriia-khmelevska.jpg',
+    url: 'https://github.com/ViktoriiaKhmelevska',
   },
 ];

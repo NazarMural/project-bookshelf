@@ -57,7 +57,7 @@ function createShoppingListMarkup(data) {
         `<li class="shopCard is-hidden">
   <div class="shopCard__card-container">
     <div class="shopCard__photo-container">
-      <img class="shopCard__photo" src="${book_image}" alt="${title} loading="lazy"" />
+      <img class="shopCard__photo" src="${book_image}" alt="${title}" loading="lazy" />
     </div>
     <div class="shopCard__box-description">
       <div>
