@@ -52,7 +52,7 @@ export const team = [
     name: 'Viktoriia Khmelevska',
     position: 'Developer',
     description: 'Support Ukraine, Swiper, HTML, SCSS',
-    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/viktoriia-khmelevska.jpg',
+    img: 'https://raw.githubusercontent.com/NazarMural/project-bookshelf/main/src/images/team/viktoriia-khmelevska.png',
     url: 'https://github.com/ViktoriiaKhmelevska',
   },
 ];
