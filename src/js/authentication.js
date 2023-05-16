@@ -291,6 +291,7 @@ function modalSignUpFuncKey(e) {
 
 function closeModalForm() {
   modalSignUp.classList.remove('k-modal--active');
+  inputPass.type = 'password';
   document.body.style.overflow = 'overlay';
   document.removeEventListener('keydown', modalSignUpFuncKey);
 }
@@ -361,3 +362,33 @@ function sendEmail() {
 }
 
 export { postBook, deleteBook, getBook, openSignUpFunc };
+
+const iconPass = document.querySelector('.k-modal__icon[alt="lock"]');
+const inputPass = document.querySelector('.k-modal__input[name="password"]');
+console.dir(inputPass);
+
+iconPass.addEventListener('click', onClickIconPass);
+
+function onClickIconPass() {
+  if (inputPass.type === 'password') {
+    inputPass.type = 'text';
+  } else {
+    inputPass.type = 'password';
+  }
+}
+
+Notiflix.Notify.init({
+  width: '300px',
+  borderRadius: '18px',
+  position: 'center-top',
+  // closeButton: true,
+  fontFamily: 'DM Sans',
+  fontSize: '20px',
+  fontAwesomeIconSize: '38px',
+  distance: '30%',
+  success: {
+    background: '#4F2EE8',
+    textColor: '#fff',
+    notiflixIconColor: 'rgba(255,255,255,0.2)',
+  },
+});
