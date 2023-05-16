@@ -23,16 +23,6 @@ function onCloseModalTeam(evt) {
   closeModalTeam();
 }
 
-// function onKeyCloseModalTeam(e) {
-//   const key = e.keyCode;
-//   if (key === 27) {
-//     // document.querySelector('.modal.active').classList.remove('active');
-//     modalTeam.classList.add('backdrop-team--hidden');
-//     document.body.classList.remove('modal-team-open');
-//   }
-// }
-// document.body.removeEventListener('keyup', onKeyCloseModalTeam);
-
 function creatMarkupTeam() {
   const markup = team
     .map(
@@ -45,7 +35,7 @@ function creatMarkupTeam() {
       }) => ` <li class="modal-team__item">
   <div class="modal-team__img-container">
       <img class="modal-team__img" src="${img}" alt="${name}" width="150" height="150">
-              <a class="modal-team__link-github" target="_blanc" href="${url}">
+              <a class="modal-team__link-github" target="_blank" href="${url}">
               <svg class="modal-team__icon-github" width="24" height="24">
               <use href="${svgGithubUrl}#icon-github"></use>
           </svg></a>
