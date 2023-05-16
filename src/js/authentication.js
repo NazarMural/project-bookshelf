@@ -36,6 +36,10 @@ const auth = getAuth();
 let userId = null;
 let LOGIN = false;
 
+Notiflix.Notify.init({
+  position: 'right-bottom',
+});
+
 const menuHeader = document.querySelector('.js-list__nav');
 const openSignUp = document.querySelector('[openSignUp]');
 const modalBookBtn = document.querySelector('.modal__btn');
@@ -241,7 +245,7 @@ modalForm.addEventListener('submit', modalFormFunc);
 buttonSignUp.addEventListener('click', buttonSignUpFunc);
 buttonSignIn.addEventListener('click', buttonSignInFunc);
 
-let signUpBoll = true;
+let signUpBoll = false;
 
 const collapsibles = document.querySelectorAll('.k-modal__input');
 collapsibles.forEach(collapsible => {
@@ -295,10 +299,11 @@ function modalFormFunc(e) {
   e.preventDefault();
   const { name, email, password } = e.target.elements;
 
-  if (!signUpBoll) return modalLoginFunc(email.value, password.value);
+  if (!signUpBoll)
+    return modalLoginFunc(email.value.toLowerCase(), password.value);
 
   if (name.value && email.value && password.value) {
-    createUser(email.value, password.value)
+    createUser(email.value.toLowerCase(), password.value)
       .then(userCredential => {
         console.log(userCredential);
 
@@ -321,24 +326,28 @@ function modalFormFunc(e) {
 }
 
 function modalLoginFunc(email, password) {
-  signIn(email, password)
-    .then(userCredential => {
-      console.log(userCredential);
-      userId = userCredential.user.uid;
+  if (email && password) {
+    signIn(email, password)
+      .then(userCredential => {
+        console.log(userCredential);
+        userId = userCredential.user.uid;
 
-      localStorage.setItem('uid', userId);
-      loginFunc(userCredential.user.emailVerified);
+        localStorage.setItem('uid', userId);
+        loginFunc(userCredential.user.emailVerified);
 
-      modalForm.reset();
-      collapsibles.forEach(collapsible => {
-        collapsible.classList.remove('hide-label');
+        modalForm.reset();
+        collapsibles.forEach(collapsible => {
+          collapsible.classList.remove('hide-label');
+        });
+        closeModalForm();
+      })
+      .catch(error => {
+        console.log(error);
+        Notiflix.Notify.failure('Неверный пароль или почта!');
       });
-      closeModalForm();
-    })
-    .catch(error => {
-      console.log(error);
-      Notiflix.Notify.failure('Неверный пароль или почта!');
-    });
+  } else {
+    Notiflix.Notify.failure('Введите все поля!');
+  }
 }
 
 function sendEmail() {

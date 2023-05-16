@@ -4,7 +4,7 @@
       <img src="./images/k-x-close.svg" alt="close" />
     </button>
 
-    <div class="k-modal__block">
+    <div class="k-modal__block" style="display: none">
       <input class="k-modal__input" type="text" id="name" name="name" />
       <label for="name">Name</label>
     </div>
@@ -12,7 +12,7 @@
     <div class="k-modal__block">
       <input
         class="k-modal__input"
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$"
         type="email"
         id="email"
         name="email"
@@ -34,12 +34,12 @@
     </div>
 
     <button name="publish" class="k-modal__submit" type="submit">
-      Sign up
+      Sign In
     </button>
 
     <div class="k-modal__footer">
-      <button class="active" type="button" buttonSignUp>Sign up</button>
-      <button type="button" buttonSignIn>Sign In</button>
+      <button type="button" buttonSignUp>Sign up</button>
+      <button class="active" type="button" buttonSignIn>Sign In</button>
     </div>
-  </form> 
+  </form>
 </div>
