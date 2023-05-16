@@ -1,5 +1,3 @@
-
-
 .header {
     z-index: 100;
     position: fixed;
@@ -29,19 +27,20 @@
         padding-bottom: 14px;
     }
 
-    &.autorizationstyle{
- @media (min-width:768px) {
-        justify-content: space-between;
-    }
+    &.autorizationstyle {
+        @media (min-width:768px) {
+            justify-content: space-between;
+        }
     }
 
 }
 
 
 
-.header__container{
-    display:flex;
+.header__container {
+    display: flex;
 }
+
 .list__nav {
     display: none;
     align-items: center;
@@ -50,7 +49,7 @@
 
     &.show {
         display: flex;
-        
+
     }
 
     @media (min-width:1440px) {
@@ -58,7 +57,7 @@
     }
 }
 
-.header__content{
+.header__content {
     display: flex;
     align-items: center;
 }
@@ -83,29 +82,32 @@
 }
 
 .icon__burger--open,
-.icon__burger--close{
+.icon__burger--close {
     stroke: $primary-text-color;
-     @media (min-width: 768px) {
+
+    @media (min-width: 768px) {
         display: none;
     }
-    
+
 }
 
 
 .header__burger--open,
-.header__burger--close{
+.header__burger--close {
     background-color: $bg-color-header;
-    border:transparent;
-  @media (min-width: 768px) {
-            display: none;}
-    
+    border: transparent;
 
-    
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+
+
 }
 
 
 
-.block{
+.block {
     display: none;
 }
 
@@ -189,7 +191,7 @@
 
 }
 
-.js-icon.current{
+.js-icon.current {
     fill: #111111;
 }
 
@@ -214,6 +216,7 @@
         }
     }
 }
+
 .log {
     display: none;
 
@@ -221,8 +224,9 @@
         display: flex;
     }
 }
-.log{
-    &.show{
+
+.log {
+    &.show {
 
         display: none;
         align-items: center;
@@ -234,18 +238,23 @@
         border-radius: 50px;
         letter-spacing: -0.04em;
         color: $bg-color-header;
+        cursor: pointer;
+
 
         &.show {
- @media (min-width: 768px) {
-            display: flex;}
+            @media (min-width: 768px) {
+                display: flex;
+            }
         }
     }
 }
-.log-out{
+
+.log-out {
     background: transparent;
     border: transparent;
     letter-spacing: -0.04em;
-    color:$bg-color-header;
+    color: $bg-color-header;
+    cursor: pointer;
 }
 
 #toggle {
@@ -318,35 +327,38 @@
 
 
 
-.icon-black{
+.icon-black {
     stroke: $bg-color-header;
-    fill:  $bg-color-header;
-}
-.button-black{
-background-color: #111111;
+    fill: $bg-color-header;
 }
 
-.exit{
-    display: none;}
+.button-black {
+    background-color: #111111;
+}
 
-.exit_show{
+.exit {
+    display: none;
+}
+
+.exit_show {
     top: 60px;
     right: 0px;
     position: absolute;
     width: 184px;
     display: flex;
     align-items: center;
-    gap:4px;
+    gap: 4px;
     padding: 14px 24px;
     justify-content: space-between;
     height: 48px;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-   line-height: 1.29;
-   letter-spacing: -0.04em; 
-   color: #111111;
-   background: #FFFFFF;
-   border: 1.5px solid #111111;
-   border-radius: 18px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    color: #111111;
+    background: #FFFFFF;
+    border: 1.5px solid #111111;
+    border-radius: 50px;
+    cursor: pointer;
 }

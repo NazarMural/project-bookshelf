@@ -17,6 +17,7 @@
       width: 356px;
     }
   }
+
   &__ul {
     margin-top: 40px;
   }
@@ -166,6 +167,7 @@
     &:focus {
       background-color: $secondary-button-pagination-color;
       filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+      cursor: pointer;
     }
 
     @media screen and (min-width: $tablet) {
@@ -283,8 +285,7 @@
     filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
 
     .dark-theme & {
-      filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%)
-        contrast(95%);
+      filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
     }
   }
 
