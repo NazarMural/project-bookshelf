@@ -17,6 +17,9 @@
       width: 356px;
     }
   }
+  &__ul {
+    margin-top: 40px;
+  }
 
   &__container {
     margin-bottom: 50px;
@@ -42,13 +45,12 @@
     line-height: 1.18;
     letter-spacing: -0.04em;
     margin: 0;
-    margin-bottom: 120px;
+
     white-space: nowrap;
 
     @media screen and (min-width: $tablet) {
       font-size: 48px;
       line-height: 1.08;
-      margin-bottom: 140px;
     }
 
     .dark-theme & {
@@ -114,6 +116,7 @@
   }
 
   &__imgContainer {
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
     width: 265px;
@@ -123,6 +126,7 @@
 
     @media screen and (min-width: $tablet) {
       width: 349px;
+      margin-top: 140px;
     }
   }
 }
@@ -279,7 +283,8 @@
     filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
 
     .dark-theme & {
-      filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
+      filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%)
+        contrast(95%);
     }
   }
 

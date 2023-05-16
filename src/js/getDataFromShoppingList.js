@@ -8,7 +8,8 @@ import bookShopLogo from '../images/bookShopLogo.png';
 import deleteButtonIcon from '../images/deleteButtonIcon.png';
 
 const mainUl = document.querySelector('.shopList__ul');
-const markupContainer = document.querySelector('.shopList__list');
+const tui = document.querySelector('.tui-pagination');
+
 //create markup
 getDataForMarkup();
 
@@ -18,7 +19,6 @@ async function getDataForMarkup() {
   if (data !== null) {
     const markup = await createShoppingListMarkup(data);
     mainUl.insertAdjacentHTML('beforeend', markup);
-    markupContainer.insertAdjacentHTML('afterbegin', addTitle);
     addPagination();
   } else {
     mainUl.insertAdjacentHTML('beforeend', noDataImg);
@@ -34,7 +34,8 @@ async function removeBook(bookID) {
     mainUl.innerHTML = markup;
     addPagination();
   } else {
-    markupContainer.innerHTML = noDataImg;
+    mainUl.innerHTML = noDataImg;
+    tui.innerHTML = '';
   }
 }
 
@@ -108,10 +109,8 @@ function createShoppingListMarkup(data) {
 }
 
 //if no data
-const noDataImg = `<h1 class="shopList__title">
-    Shopping <span class="shopList__accent">List</span>
-  </h1>
-  <section class="shopList__section">
+const noDataImg = `<li>
+  <div class="shopList__section">
     <div class="shopList__imgContainer">
       <p class="shopList__text">
         This page is empty, add some books and proceed to order.
@@ -123,11 +122,7 @@ const noDataImg = `<h1 class="shopList__title">
         class="shopList__img"
       />
     </div>
-  </section>`;
-
-const addTitle = `<h1 class="shopList__titleMarkup">
-    Shopping <span class="shopList__accent">List</span>
-  </h1>`;
+  </div></li>`;
 
 //addEventListener after create markup
 document.addEventListener('click', function (e) {
