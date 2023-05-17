@@ -33,14 +33,17 @@ body.modal-open {
   border: solid 2px #111111;
   border-radius: 10px;
   overflow: auto;
+
   @media screen and (min-width: 768px) {
     max-width: 579px;
     // max-height: 465px;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
   }
+
   .dark-theme & {
     background-color: $bg-color-darkt;
+    border: 2px solid $bg-color;
   }
 }
 
@@ -62,22 +65,32 @@ body.modal-open {
 .store-icon {
   filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
   transition: filter 250ms $cubic;
+
   &:hover,
   &:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+
+    .dark-theme & {
+      filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.3));
+    }
   }
 }
 
 .store-icon--amazon {
   filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
   transition: filter 250ms $cubic;
+
   &:hover,
   &:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+
+    .dark-theme & {
+      filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.3));
+    }
   }
+
   .dark-theme & {
-    filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%)
-      contrast(95%);
+    filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
   }
 }
 
@@ -93,6 +106,7 @@ body.modal-open {
 .close-icon {
   fill: #111111;
   transition: fill 250ms $cubic, width 250ms $cubic, height 250ms$cubic;
+
   .dark-theme & {
     fill: $primary-text-color-darkt;
   }
@@ -120,12 +134,15 @@ body.modal-open {
   letter-spacing: -0.01em;
   cursor: pointer;
   transition: color 250ms $cubic, background-color 250ms $cubic;
+
   .dark-theme & {
     color: $primary-text-color-darkt;
   }
+
   @media screen and (max-width: 767px) {
     padding: 14px 0;
   }
+
   @media screen and (min-width: 768px) {
     min-width: 499px;
     min-height: 64px;
@@ -154,15 +171,18 @@ body.modal-open {
   letter-spacing: -0.04em;
   line-height: 1.2;
   color: rgba(17, 17, 17, 0.5);
+
   .dark-theme & {
     color: $bg-color-header;
   }
 }
+
 .book-container {
   @media screen and (min-width: 768px) {
     display: flex;
   }
 }
+
 .text-container {
   @media screen and (min-width: 768px) {
     display: flex;
@@ -175,6 +195,7 @@ body.modal-open {
   height: 408px;
   border-radius: 8px;
   margin-bottom: 14px;
+
   @media screen and (min-width: 768px) {
     width: 192px;
     height: 281px;
@@ -190,10 +211,12 @@ body.modal-open {
   letter-spacing: -0.04em;
   color: #111111;
   margin-bottom: 4px;
+
   @media screen and (min-width: 768px) {
     font-size: 24px;
     line-height: 1.16;
   }
+
   .dark-theme & {
     color: $primary-text-color-darkt;
   }
@@ -218,12 +241,15 @@ body.modal-open {
   letter-spacing: -0.04em;
   color: #111111;
   min-height: 50px;
+
   .dark-theme & {
     color: $primary-text-color-darkt;
   }
 }
+
 .modal-content {
   padding: 40px 24px;
+
   @media screen and (min-width: 768px) {
     padding: 40px;
   }
