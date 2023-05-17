@@ -144,7 +144,6 @@
   }
 
   &__photo {
-    z-index: -1;
     margin: 0;
     object-fit: cover;
     display: block;
@@ -281,7 +280,8 @@
       filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
 
       .dark-theme & {
-        filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.3));
+        filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%)
+          contrast(95%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.3));
       }
     }
 
@@ -293,7 +293,8 @@
     filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
 
     .dark-theme & {
-      filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%);
+      filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%)
+        contrast(95%);
     }
   }
 
@@ -316,8 +317,6 @@
     }
 
     filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
-
-
   }
 
   &__card-container {
@@ -329,6 +328,10 @@
     height: 170px;
     box-sizing: border-box;
     margin-bottom: 20px;
+    background-color: $bg-color-header;
+    .dark-theme & {
+      background-color: $primary-text-color;
+    }
   }
 
   &__description-container {
@@ -349,7 +352,6 @@
     aspect-ratio: 2/3;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: inset 6px 0 2px 1px #0005;
 
     @media screen and (min-width: $tablet) {
       margin-right: 24px;
