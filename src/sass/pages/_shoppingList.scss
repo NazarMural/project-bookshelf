@@ -352,6 +352,7 @@
     display: flex;
     align-items: baseline;
     gap: 8px;
+    min-width: 80px;
 
     @media screen and (min-width: $tablet) {
       gap: 8px;
@@ -361,6 +362,7 @@
 
   &__boxAutor {
     display: flex;
+    gap: 5px;
 
     justify-content: space-between;
 
