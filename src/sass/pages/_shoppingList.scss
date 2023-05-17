@@ -260,6 +260,10 @@
     &:hover,
     &:focus {
       filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+
+      .dark-theme & {
+        filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.3));
+      }
     }
 
     @media screen and (min-width: $tablet) {
@@ -275,6 +279,10 @@
     &:hover,
     &:focus {
       filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+
+      .dark-theme & {
+        filter: invert(100%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(95%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.3));
+      }
     }
 
     @media screen and (min-width: $tablet) {
@@ -296,6 +304,10 @@
     &:hover,
     &:focus {
       filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+
+      .dark-theme & {
+        filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.3));
+      }
     }
 
     @media screen and (min-width: $tablet) {
@@ -304,6 +316,8 @@
     }
 
     filter: saturate(1%) hue-rotate(1deg) grayscale(1000%) contrast(95%);
+
+
   }
 
   &__card-container {
@@ -352,6 +366,7 @@
     display: flex;
     align-items: baseline;
     gap: 8px;
+    min-width: 80px;
 
     @media screen and (min-width: $tablet) {
       gap: 8px;
@@ -361,6 +376,7 @@
 
   &__boxAutor {
     display: flex;
+    gap: 5px;
 
     justify-content: space-between;
 
