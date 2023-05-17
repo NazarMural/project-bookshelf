@@ -149,7 +149,7 @@ body.modal-team-open {
         transition: transform 250ms $cubic;
 
         .modal-team__link-github:hover & {
-            transform: rotate(360deg)scale(1.5);
+            transform: rotate(360deg) scale(1.5);
         }
     }
 
